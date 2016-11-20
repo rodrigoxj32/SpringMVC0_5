@@ -24,7 +24,7 @@
 
                     <p>Fecha: <input type="date" ng-model="exportacion.datos.fecha_formexpor" class="form-control"></p>
 
-                    <input type="submit" value="Guardar" class="btn btn-primary " ng-disabled="exportacion.$invalid">
+                    <input type="submit" value="Guardar" class="btn btn-primary " >
             </form>
         </div>
         
@@ -102,7 +102,8 @@
     function submit() {
         console.log('Nuevo formulario guardado', self.datos);
         createFormularioExportacion(self.datos);
- 
+        
+        alert("hola");
         reset();
     }
  
