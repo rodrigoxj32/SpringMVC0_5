@@ -13,10 +13,35 @@ package aduana.service;
 import org.springframework.stereotype.Service;
  
 import aduana.modelo.Formularioexportacion;
+import aduana.HibernateUtil;
+
 import java.util.List;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+
  
 @Service("formExportacionService")
 public class FormExportacionServiceImpl implements FormExportacionService {
+    
+     Session cn = HibernateUtil.getSessionFactory().getCurrentSession();
+
+    public FormExportacionServiceImpl() {
+        cn = HibernateUtil.getSessionFactory().getCurrentSession();
+    }
+
+    public Session getSession() {
+        if (cn == null) {
+            cn = HibernateUtil.getSessionFactory().getCurrentSession();
+        }
+        return cn;
+    }
+
+    public void desconetcar() {
+        if (cn != null) {
+            cn = null;
+        }
+    }
 
     @Override
     public Formularioexportacion findById(long id) {
@@ -24,9 +49,21 @@ public class FormExportacionServiceImpl implements FormExportacionService {
     }
 
     @Override
-    public void saveFormularioExportacion(Formularioexportacion user) {
+    public void saveFormularioExportacion(Formularioexportacion c) {
         
             /*codigo para guardar en la base*/
+            
+          Transaction t = getSession().getTransaction();
+        try {
+            t.begin();
+            getSession().save(c);
+            t.commit();
+        } catch (Exception e) {
+            t.rollback();
+        } finally {
+            desconetcar();
+        }
+            
         System.out.println("algo paso");
     }
 
