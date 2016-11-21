@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 11-20-2016 10:33:47 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+  <class name="aduana.modelo.Pais" optimistic-lock="version" schema="public" table="pais">
+    <id name="idPais" type="int">
+      <column name="id_pais"/>
+      <generator class="assigned"/>
+    </id>
+    <many-to-one class="aduana.modelo.Pago" fetch="select" name="pago">
+      <column name="id_pago"/>
+    </many-to-one>
+    <property name="codigoAreaPais" type="int">
+      <column name="codigo_area_pais" not-null="true"/>
+    </property>
+    <property name="codigoPais" type="string">
+      <column length="100" name="codigo_pais" not-null="true"/>
+    </property>
+    <property name="nombrePais" type="string">
+      <column length="100" name="nombre_pais" not-null="true"/>
+    </property>
+    <set fetch="select" inverse="false" lazy="true" name="formularioexportacions" table="formexpor_pais">
+      <key>
+        <column name="id_pais" not-null="true"/>
+      </key>
+      <many-to-many entity-name="modelo.Formularioexportacion">
+        <column name="id_formexpor" not-null="true"/>
+      </many-to-many>
+    </set>
+    <set fetch="select" inverse="true" lazy="true" name="productosForPaiIdPais" table="producto">
+      <key>
+        <column name="pai_id_pais"/>
+      </key>
+      <one-to-many class="aduana.modelo.Producto"/>
+    </set>
+    <set fetch="select" inverse="true" lazy="true" name="productosForIdPais" table="producto">
+      <key>
+        <column name="id_pais"/>
+      </key>
+      <one-to-many class="aduana.modelo.Producto"/>
+    </set>
+    <set fetch="select" inverse="true" lazy="true" name="departamentos" table="departamento">
+      <key>
+        <column name="id_pais"/>
+      </key>
+      <one-to-many class="aduana.modelo.Departamento"/>
+    </set>
+    <set fetch="select" inverse="true" lazy="true" name="aduanas" table="aduana">
+      <key>
+        <column name="id_pais"/>
+      </key>
+      <one-to-many class="aduana.modelo.Aduana"/>
+    </set>
+  </class>
+</hibernate-mapping>

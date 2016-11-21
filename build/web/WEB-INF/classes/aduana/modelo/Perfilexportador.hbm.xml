@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 11-20-2016 10:33:47 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+  <class name="aduana.modelo.Perfilexportador" optimistic-lock="version" schema="public" table="perfilexportador">
+    <id name="idPerfilexpor" type="int">
+      <column name="id_perfilexpor"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="codigoPerfilexpor" type="string">
+      <column length="100" name="codigo_perfilexpor" not-null="true"/>
+    </property>
+    <property name="domicilioPerfilexpor" type="string">
+      <column name="domicilio_perfilexpor" not-null="true"/>
+    </property>
+    <property name="idtributarioPerfilexpor" type="string">
+      <column length="15" name="idtributario_perfilexpor" not-null="true"/>
+    </property>
+    <set fetch="select" inverse="true" lazy="true" name="usuarios" table="usuario">
+      <key>
+        <column name="id_perfilexpor"/>
+      </key>
+      <one-to-many class="aduana.modelo.Usuario"/>
+    </set>
+  </class>
+</hibernate-mapping>
