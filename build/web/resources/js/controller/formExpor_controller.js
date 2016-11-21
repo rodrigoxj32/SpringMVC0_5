@@ -2,14 +2,18 @@
  
 angular.module('proyecto2').controller('FormExportController', ['$scope', 'FormExportacionService', function($scope, FormExportacionService) {
     var self = this;
-    self.Fexport={id_formexpor:null,id_usuario:null,id_transp:null,codigo_formexpor:'',origen_formexpor:'',instancias_formexpor:'',observaciones_formexpor:'',fecha_formexpor:''};
+    self.Fexport={id_formexpor:null,id_usuario:null,id_transp:null,codigo_formexpor:'',origen_formexpor:'canada',instancias_formexpor:'',observaciones_formexpor:'pruebo si inicia',fecha_formexpor:''};
     self.Fexports=[];
     self.submit = submit;
     self.edit = edit;
     self.remove = remove;
     self.reset = reset;
  
-
+    $scope.save = function(){
+        $scope.sirvio = "algo se invoco"
+    }
+ 
+ 
     fetchAllFormularioExportacion();
  
     function fetchAllFormularioExportacion(){
@@ -54,15 +58,17 @@ angular.module('proyecto2').controller('FormExportController', ['$scope', 'FormE
         );
     }
  
-    function submit() {
-        if(self.Fexport.id===null){
+   $scope.submit = function() {
+        /*if(self.Fexport.id===null){
             console.log('Nuevo formulario guardado', self.Fexport);
             createFormularioExportacion(self.Fexport);
         }else{
             updateFormularioExportacion(self.user, self.Fexport.id);
             console.log('formulario actualizado ', self.Fexport.id);
-        }
-        reset();
+        }*/
+        $scope.sirvio = "entro al metodo submit";
+        
+        //reset();
     }
  
     function edit(id){
