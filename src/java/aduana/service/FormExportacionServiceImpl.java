@@ -52,8 +52,9 @@ public class FormExportacionServiceImpl implements FormExportacionService {
     public void saveFormularioExportacion(Formularioexportacion c) {
         
             /*codigo para guardar en la base*/
-            
-          Transaction t = getSession().getTransaction();
+        System.out.println("algo paso");
+        
+        Transaction t = getSession().getTransaction();
         try {
             t.begin();
             getSession().save(c);
@@ -64,7 +65,7 @@ public class FormExportacionServiceImpl implements FormExportacionService {
             desconetcar();
         }
             
-        System.out.println("algo paso");
+
     }
 
     @Override
