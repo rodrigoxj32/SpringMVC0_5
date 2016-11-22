@@ -1,6 +1,8 @@
 'use strict';
- 
-angular.module('proyecto2').factory('FormExportacionService', ['$http', '$q', function($http, $q){
+
+var FE = angular.module("formularioExp", []);
+
+FE.factory('FormExportacionService', ['$http', '$q', function($http, $q){
  
     var REST_SERVICE_URI = 'http://localhost:8080/proyecto2/FE/';
  

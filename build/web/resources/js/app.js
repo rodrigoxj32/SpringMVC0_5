@@ -1,5 +1,5 @@
 'use strict';
 
-var App = angular.module('proyecto2',[]);
+var FE = angular.module('formularioExp',[]);
 
 
