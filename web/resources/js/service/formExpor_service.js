@@ -1,8 +1,6 @@
-'use strict';
+var FE = angular.module("formularioExp");
 
-var FE = angular.module("formularioExp", []);
-
-FE.factory('FormExportacionService', ['$http', '$q', function($http, $q){
+FE.factory('FormExportacionService', function($http, $q){
  
     var REST_SERVICE_URI = 'http://localhost:8080/proyecto2/FE/';
  
@@ -31,6 +29,7 @@ FE.factory('FormExportacionService', ['$http', '$q', function($http, $q){
     }
  
     function createFormularioExportacion(user) {
+        alert("entro aca");
         var deferred = $q.defer();
         $http.post(REST_SERVICE_URI, user)
             .then(
@@ -76,4 +75,4 @@ FE.factory('FormExportacionService', ['$http', '$q', function($http, $q){
         return deferred.promise;
     }
  
-}]);
+});
