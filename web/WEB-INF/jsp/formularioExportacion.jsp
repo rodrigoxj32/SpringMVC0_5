@@ -12,6 +12,7 @@
     <script src="${pageContext.request.contextPath}/resources/js/angular.min.js" type="text/javascript"></script>
     
     <script src="${pageContext.request.contextPath}/resources/js/controller/exportacion_controller.js" type="text/javascript"></script>
+    <script src="${pageContext.request.contextPath}/resources/js/service/formExpor_service.js" type="text/javascript"></script>
     
     
     
