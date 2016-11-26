@@ -15,28 +15,32 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
+import org.springframework.stereotype.Controller;
 
-import org.springframework.ui.ModelMap;
 
-@RestController
+
+@Controller
 public class RestFormArancelario {
-    @Autowired
-    FormArancelarioService formularioArancelario;  //Service which will do all data retrieval/manipulation work
+    @Autowired( required = false)
+    FormArancelarioService formArancelarioService;  //Service which will do all data retrieval/manipulation work
     
-    
+    @RequestMapping(value="/formularioArancelario",method = RequestMethod.GET)
+	public String formularioArancelario() {
+ 		return "formularioArancelario";
+ 	}
          
     //-------------------Recive todos los formularios--------------------------------------------------------
       
     @RequestMapping(value = "/FA/", method = RequestMethod.GET)
     public ResponseEntity<List<Formularioarancelario>> findAllFormArancelario() {
-        List<Formularioarancelario> formArancel = formularioArancelario.findAllFormularioArancelario();
+        System.out.println("entro a este metodo");
+        List<Formularioarancelario> formArancel = formArancelarioService.findAllFormularioArancelario();
         if(formArancel.isEmpty()){
             return new ResponseEntity<List<Formularioarancelario>>(HttpStatus.NO_CONTENT);//You many decide to return HttpStatus.NOT_FOUND
         }
@@ -65,7 +69,7 @@ public class RestFormArancelario {
         return new ResponseEntity<Void>(headers, HttpStatus.CREATED);*/
         System.out.println("entro a este metodo");
         
-        formularioArancelario.saveFormularioArancelario(fa);
+        formArancelarioService.saveFormularioArancelario(fa);
         HttpHeaders headers = new HttpHeaders();
         return new ResponseEntity<Void>(headers, HttpStatus.CREATED);
     }

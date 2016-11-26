@@ -140,8 +140,8 @@
                             <div class="generic-container" ng-controller="arancelario as ctrl">
                             <form ng-submit="ctrl.submit()" name="FormArancelario">  
                             <div class="form-group">
-                                <label for="idformarancelario">Id Form:</label>
-                                <input type="text" name="idformarancelario" required class="form-control" placeholder="ID Formulario" id="idformarancelario" ng-model="exportacion.datos.id_formexpor">
+                                <label for="idFormarancelario">Id Form:</label>
+                                <input type="text" name="idFormarancelario" required class="form-control" placeholder="ID Formulario" id="idFormarancelario" ng-model="arancelario.datos.idFormarancelario">
                             </div>
                             <div class="form-group">
                                 <label>Usuario:</label>

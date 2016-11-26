@@ -1,8 +1,11 @@
+'use strict';
+
+
 var app=angular.module("formularioAra");
   
 
 app.factory("FormArancelarioService",['$http', '$q',function($http, $q) {
-  var REST_SERVICE_URI = 'http://localhost:8080/web/FA/';
+  var REST_SERVICE_URI = 'http://localhost:8080/SpringMVC0_5/FA/';
   
       var factory = {
         findAllFormularioArancelario: findAllFormularioArancelario,
@@ -21,7 +24,7 @@ app.factory("FormArancelarioService",['$http', '$q',function($http, $q) {
                 deferred.resolve(response.data);
             },
             function(errResponse){
-                console.error('Error while fetching Users');
+                console.error('Error mientras se obtenian  los Formularios Arancelarios');
                 deferred.reject(errResponse);
             }
         );

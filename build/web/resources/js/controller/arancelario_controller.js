@@ -1,3 +1,6 @@
+'use strict';
+
+
 var app=angular.module("formularioAra",[]);
   
 app.controller("arancelario",["$scope","FormArancelarioService",function($scope,FormArancelarioService) {
