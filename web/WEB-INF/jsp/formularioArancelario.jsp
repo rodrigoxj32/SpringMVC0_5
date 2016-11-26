@@ -194,10 +194,9 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="${pageContext.request.contextPath}/resources/js/bootstrap.min.js"></script>
 
-    <!--
     <script src="${pageContext.request.contextPath}/resources/js/angular.min.js" type="text/javascript"></script>
-    -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.js"></script>
+    
+    
     <script src="${pageContext.request.contextPath}/resources/js/controller/arancelario_controller.js" type="text/javascript"></script>
     <script src="${pageContext.request.contextPath}/resources/js/service/formAranc_service.js" type="text/javascript"></script>
     
