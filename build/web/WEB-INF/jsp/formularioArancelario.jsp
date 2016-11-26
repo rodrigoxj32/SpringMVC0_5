@@ -23,7 +23,7 @@
         <!-- Custom CSS -->
         <link href="${pageContext.request.contextPath}/resources/css/blog-home.css" rel="stylesheet">
     </head>
-<body ng-app="FormumalioArancelario" ng-controller="FormumalioArancelarioController">  
+<body ng-app="formularioAra">  
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
@@ -133,15 +133,15 @@
                 <!-- Blog Categories Well -->
                 
                 <div class="well">
-                    <h4>Ingresar <h1>${mensaje}</h1></h4>
+                    <h4>Ingresar ${mensaje}</h4>
                     <div class="row">
                         <div class="col-lg-6">
                             <!-- /.col-lg-6 -->
-                            <form ng-submit="submitArancelario()">  
-                            
+                            <div class="generic-container" ng-controller="arancelario as ctrl">
+                            <form ng-submit="ctrl.submit()" name="FormArancelario">  
                             <div class="form-group">
                                 <label for="idformarancelario">Id Form:</label>
-                                <input type="text" name="idformarancelario" required class="form-control" placeholder="ID Formulario" id="idformarancelario" ng-model="arancelForm.arancelidform">
+                                <input type="text" name="idformarancelario" required class="form-control" placeholder="ID Formulario" id="idformarancelario" ng-model="exportacion.datos.id_formexpor">
                             </div>
                             <div class="form-group">
                                 <label>Usuario:</label>
@@ -154,12 +154,13 @@
                             
                             <div class="form-group">
                                 <label>Cod Arancelario:</label>
-                                <input  type="text" name="codarancelario" id="codarancelario" required class="form-control" value="" placeholder="Cod Arancelario" >
+                                <input  type="text" name="codarancelario" id="codarancelario" required class="form-control"  ng-model="arancelario.datos.codigo_formexpor" value="" placeholder="Cod Arancelario" >
                             </div>
                             <div class="form-group">
                                 <button class="btn btn-primary" type="submit" id="guardar"><i class="fa fa-floppy-o"></i> Guardar</button>
                             </div>
                             </form>
+                            </div>
                         </div>
                         <!-- /.col-lg-6 -->
                     </div>
@@ -194,96 +195,11 @@
     <script src="${pageContext.request.contextPath}/resources/js/bootstrap.min.js"></script>
 
     <script src="${pageContext.request.contextPath}/resources/js/angular.min.js" type="text/javascript"></script>
-    <script type="text/javascript">
-            var app = angular.module("FormumalioArancelario", []);
-         
-            //Controller Part
-            app.controller("FormumalioArancelarioController", function($scope, $http) {
-         
-               
-                $scope.arancel = [];
-                $scope.arancelForm = {
-                    arancelidform:-1,
-                    idusuario : "",
-                    codarancelario : ""
-                };
-         
-                //Now load the data from server
-                _refreshArancelData();
-         
-                //HTTP POST/PUT methods for add/edit country 
-                // with the help of id, we are going to find out whether it is put or post operation
-                
-                $scope.submitArancelario = function() {
-         
-                    var method = "";
-                    var url = "";
-                    if ($scope.arancelForm.arancelidform == -1) {
-                        //Id is absent in form data, it is create new country operation
-                        method = "POST";
-                        url = 'rest/formarancel';
-                    } else {
-                        //Id is present in form data, it is edit country operation
-                        method = "PUT";
-                        url = 'rest/formarancel';
-                    }
-         
-                    $http({
-                        method : method,
-                        url : url,
-                        data : angular.toJson($scope.arancelForm),
-                        headers : {
-                            'Content-Type' : 'application/json'
-                        }
-                    }).then( _success, _error );
-                };
-         
-                //HTTP DELETE- delete country by Id
-                $scope.deleteArancel = function(arancelform) {
-                    $http({
-                        method : 'DELETE',
-                        url : 'rest/formarancel/' + arancelform.arancelidform;
-                    }).then(_success, _error);
-                };
- 
-             // In case of edit, populate form fields and assign form.id with country id
-                $scope.editArancel = function(arancelform) {
-                    $scope.arancelForm.idusuario = arancelform.idusuario;
-                    $scope.arancelForm.codarancelario = arancelform.codarancelario;
-                    $scope.arancelForm.id = arancelform.arancelidform;
-                };
-         
-                /* Private Methods */
-                //HTTP GET- get all countries collection
-                function _refreshCountryData() {
-                    $http({
-                        method : 'GET',
-                        url : 'http://localhost:8080/AngularjsJAXRSCRUDExample/rest/formarancel'
-                    }).then(function successCallback(response) {
-                        $scope.countries = response.data;
-                    }, function errorCallback(response) {
-                        console.log(response.statusText);
-                    });
-                }
-         
-                function _success(response) {
-                    _refreshArancelData();
-                    _clearFormData()
-                }
-         
-                function _error(response) {
-                    console.log(response.statusText);
-                }
-         
-                //Clear the form
-                function _clearFormData() {
-                    $scope.arancelForm.arancelidform = -1;
-                    $scope.arancelForm.idusuario = "";
-                    $scope.arancelForm.codarancelario = "";
-                
-                };
-            });
-        </script>
+    
+    
+    <script src="${pageContext.request.contextPath}/resources/js/controller/arancelario_controller.js" type="text/javascript"></script>
+    <script src="${pageContext.request.contextPath}/resources/js/service/formAranc_service.js" type="text/javascript"></script>
+    
 
 </body>
 
