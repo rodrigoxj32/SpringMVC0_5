@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 11-20-2016 10:33:47 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+  <class name="aduana.modelo.Aduana" optimistic-lock="version" schema="public" table="aduana">
+    <id name="idAduana" type="int">
+      <column name="id_aduana"/>
+      <generator class="assigned"/>
+    </id>
+    <many-to-one class="aduana.modelo.Pais" fetch="select" name="pais">
+      <column name="id_pais"/>
+    </many-to-one>
+    <property name="nombreAduana" type="string">
+      <column length="100" name="nombre_aduana" not-null="true"/>
+    </property>
+    <property name="codigoAduana" type="string">
+      <column length="100" name="codigo_aduana" not-null="true"/>
+    </property>
+  </class>
+</hibernate-mapping>
