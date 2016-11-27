@@ -28,13 +28,14 @@ import org.springframework.stereotype.Controller;
 @RestController
 public class RestArancel {
     @Autowired( required = false)
-    FormArancelarioServiceImpl servicioArancelario ;  //Service which will do all data retrieval/manipulation work
+    FormArancelarioService servicioArancelario ;  //Service which will do all data retrieval/manipulation work
  
     
     //-------------------Retrieve All FormularioArancelario--------------------------------------------------------
      
     @RequestMapping(value = "/FA/", method = RequestMethod.GET)
     public ResponseEntity<List<Formularioarancelario>> listAllUsers() {
+        System.out.println("metodo de busqueda");
         List<Formularioarancelario> formAran = servicioArancelario.findAllFormularioArancelario();
         if(formAran.isEmpty()){
             return new ResponseEntity<List<Formularioarancelario>>(HttpStatus.NO_CONTENT);//You many decide to return HttpStatus.NOT_FOUND
@@ -69,7 +70,7 @@ public class RestArancel {
         servicioArancelario.saveFormularioArancelario(formAran);
  
         HttpHeaders headers = new HttpHeaders();
-        headers.setLocation(ucBuilder.path("/user/{id}").buildAndExpand(formAran.getIdFormarancelario()).toUri());
+        headers.setLocation(ucBuilder.path("/FA/{id}").buildAndExpand(formAran.getIdFormarancelario()).toUri());
         return new ResponseEntity<Void>(headers, HttpStatus.CREATED);
     }
  
@@ -109,8 +110,10 @@ public class RestArancel {
             System.out.println("no se puede eliminar el formulario " + id + " not found");
             return new ResponseEntity<Formularioarancelario>(HttpStatus.NOT_FOUND);
         }
- 
-        servicioArancelario.deleteFormularioArancelarioById(id);
+        
+        Formularioarancelario fa = servicioArancelario.findById(id);
+        
+        servicioArancelario.deleteFormularioArancelarioById(fa);
         return new ResponseEntity<Formularioarancelario>(HttpStatus.NO_CONTENT);
     }
  
@@ -120,7 +123,7 @@ public class RestArancel {
      
     @RequestMapping(value = "/FA/", method = RequestMethod.DELETE)
     public ResponseEntity<Formularioarancelario> deleteAllUsers() {
-        System.out.println("Deleting All Users");
+        System.out.println("Deleting All formularios arancelarios");
  
         servicioArancelario.deleteAllFormularioArancelario();
         return new ResponseEntity<Formularioarancelario>(HttpStatus.NO_CONTENT);

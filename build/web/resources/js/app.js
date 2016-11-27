@@ -1,6 +1,6 @@
 'use strict';
 
-var FE = angular.module('formularioExp',[]);
+var FE = angular.module('formularioExpor',[]);
 var FA =angular.module('formularioAra',[]);
 
 

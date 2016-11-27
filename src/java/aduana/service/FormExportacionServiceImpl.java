@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
  
 import aduana.modelo.Formularioexportacion;
 import aduana.HibernateUtil;
+import aduana.modelo.Formularioarancelario;
 
 import java.util.List;
 import org.hibernate.Session;
@@ -23,6 +24,7 @@ import org.hibernate.Transaction;
 @Service("formExportacionService")
 public class FormExportacionServiceImpl implements FormExportacionService {
     
+    private static List<Formularioexportacion> formularioexportacion;
      Session cn = HibernateUtil.getSessionFactory().getCurrentSession();
 
     public FormExportacionServiceImpl() {
@@ -36,15 +38,27 @@ public class FormExportacionServiceImpl implements FormExportacionService {
         return cn;
     }
 
-    public void desconetcar() {
+    public void desconectar() {
         if (cn != null) {
             cn = null;
         }
     }
 
     @Override
-    public Formularioexportacion findById(long id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Formularioexportacion findById(int id) {
+        Formularioexportacion aux = null;
+        Transaction t = getSession().getTransaction();    
+        try {
+            t.begin();           
+            aux = (Formularioexportacion) getSession().createCriteria(Formularioexportacion.class).setFirstResult(id).uniqueResult();
+            t.commit();
+
+        } catch (Exception e) {
+             t.rollback();
+        } finally {
+           desconectar();
+        }
+        return aux;
     }
 
     @Override
@@ -61,30 +75,59 @@ public class FormExportacionServiceImpl implements FormExportacionService {
         } catch (Exception e) {
             t.rollback();
         } finally {
-            desconetcar();
+            desconectar();
         }
             
 
     }
 
     @Override
-    public void updateFormularioExportacion(Formularioexportacion user) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void updateFormularioExportacion(Formularioexportacion fe) {
+        Transaction t = getSession().getTransaction();
+        try {
+            t.begin();
+            getSession().update(fe);
+            t.commit();
+        } catch (Exception e) {
+            t.rollback();
+        } finally {
+            desconectar();
+        }
     }
 
     @Override
-    public void deleteFormularioExportacionById(long id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void deleteFormularioExportacionById(Formularioexportacion fe) {
+        Transaction t = getSession().getTransaction();
+        try {
+            t.begin();
+            getSession().delete(fe);
+            t.commit();
+        } catch (Exception e) {
+            t.rollback();
+        } finally {
+            desconectar();
+        }
     }
 
     @Override
     public List<Formularioexportacion> findAllFormExportacion() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                //String hql = "FROM Person as p ORDER BY p.pid";
+	System.out.println("algo paso findAllFormularioArancelario");
+        String hql = "FROM formularioarancelario";
+        try {
+            //lista = getSession().createCriteria(Cajero.class).list();
+            formularioexportacion= getSession().createQuery(hql).list();
+            //lista = getSession().createSQLQuery("select * from cajero").list();
+        } catch (Exception e) {
+        } finally {
+            desconectar();
+        }
+        return formularioexportacion;
     }
 
     @Override
     public void deleteAllFormularioexportacion() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
     
 }

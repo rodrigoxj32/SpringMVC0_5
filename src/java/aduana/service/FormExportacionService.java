@@ -10,13 +10,13 @@ import java.util.List;
 
 public interface FormExportacionService {
 	
-	Formularioexportacion findById(long id);
+	Formularioexportacion findById(int id);
 		
-	void saveFormularioExportacion(Formularioexportacion user);
+	void saveFormularioExportacion(Formularioexportacion fe);
 	
-	void updateFormularioExportacion(Formularioexportacion user);
+	void updateFormularioExportacion(Formularioexportacion fe);
 	
-	void deleteFormularioExportacionById(long id);
+	void deleteFormularioExportacionById(Formularioexportacion fe);
 
 	List<Formularioexportacion> findAllFormExportacion(); 
 	
