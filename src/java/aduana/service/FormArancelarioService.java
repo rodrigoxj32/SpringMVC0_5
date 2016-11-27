@@ -14,7 +14,8 @@ import org.springframework.stereotype.Service;
  * @author jonathan
  */
 public interface FormArancelarioService {
-        Formularioarancelario findById(long id);
+        
+        Formularioarancelario findById(int id);
 		
 	void saveFormularioArancelario(Formularioarancelario fa);
 	

@@ -5,7 +5,7 @@ var app=angular.module("formularioAra",[]);
   
 app.controller("arancelario",["$scope","FormArancelarioService",function($scope,FormArancelarioService) {
   var self = this;
-    self.Farancel={idformarancelario:'',idusuario:'',codarancelario:''};
+    self.Farancel={idFormarancelario:'',usuario:'',CodarancelarioFormarancelario:''};
     self.Farancels=[];
 
     self.submit = submit;
@@ -32,9 +32,8 @@ app.controller("arancelario",["$scope","FormArancelarioService",function($scope,
         alert("Entro hijo de putas");
         FormArancelarioService.saveFormularioArancelario(Farancel)
             .then(
-            findAllFormularioArancelario,
             function(errResponse){
-                console.error('Error while creating User');
+                console.error('Error mientras se creaba El Formulario en el metodo java');
             }
         );
     }
@@ -61,12 +60,12 @@ app.controller("arancelario",["$scope","FormArancelarioService",function($scope,
 
     function submit() {
         alert("Entro casi lo crea");
-        if(self.Farancel.idformarancelario!=null){
+        if(self.Farancel.idFormarancelario!==null){
             console.log('Guardando El nuevo Formulario Arancelario', self.Farancel);
             saveFormularioArancelario(self.Farancel);
         }else{
-            updateUser(self.Farancel, self.Farancel.idformarancelario);
-            console.log('Formulario Arancelario actualizado con id ', self.Farancel.idformarancelario);
+            updateUser(self.Farancel, self.Farancel.idFormarancelario);
+            console.log('Formulario Arancelario actualizado con id ', self.Farancel.idFormarancelario);
         }
         reset();
     }
@@ -83,7 +82,7 @@ app.controller("arancelario",["$scope","FormArancelarioService",function($scope,
 
     function remove(id){
         console.log('id to be deleted', id);
-        if(self.Farancel.idformarancelario === id) {//clean form if the Farancel to be deleted is shown there.
+        if(self.Farancel.idFormarancelario === id) {//clean form if the Farancel to be deleted is shown there.
             reset();
         }
         deleteUser(id);
@@ -91,7 +90,7 @@ app.controller("arancelario",["$scope","FormArancelarioService",function($scope,
 
 
     function reset(){
-        self.Farancel={idformarancelario:'',idusuario:'',codarancelario:''};
+        self.Farancel={idFormarancelario:'',usuario:'',CodarancelarioFormarancelario:''};
         $scope.FormArancelario.$setPristine(); //reset Form
     }
     

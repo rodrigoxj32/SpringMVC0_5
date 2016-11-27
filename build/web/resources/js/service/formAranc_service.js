@@ -31,8 +31,7 @@ app.factory("FormArancelarioService",['$http', '$q',function($http, $q) {
         return deferred.promise;
     }
 
-    function saveFormularioArancelario(Farancel) {
-        alert("Entro Ultimo Paso saveFormularioArancelario");
+   function saveFormularioArancelario(Farancel) {
         var deferred = $q.defer();
         $http.post(REST_SERVICE_URI, Farancel)
             .then(
@@ -40,7 +39,7 @@ app.factory("FormArancelarioService",['$http', '$q',function($http, $q) {
                 deferred.resolve(response.data);
             },
             function(errResponse){
-                console.error('Error mientras crea el Nuevo Formulario Arancelario');
+                console.error('Error Mientras Se creaba el fomulario Arancelario');
                 deferred.reject(errResponse);
             }
         );

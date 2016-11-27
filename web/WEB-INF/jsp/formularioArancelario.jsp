@@ -4,7 +4,7 @@
     Author     : jonathan
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -133,7 +133,7 @@
                 <!-- Blog Categories Well -->
                 
                 <div class="well">
-                    <h4>Ingresar ${mensaje}</h4>
+                    <h4>Ingresar</h4>
                     <div class="row">
                         <div class="col-lg-6">
                             <!-- /.col-lg-6 -->
@@ -141,23 +141,25 @@
                             <form ng-submit="ctrl.submit()" name="FormArancelario">  
                             <div class="form-group">
                                 <label for="idFormarancelario">Id Form:</label>
-                                <input type="text" name="idFormarancelario" required class="form-control" placeholder="ID Formulario" id="idFormarancelario" ng-model="arancelario.datos.idFormarancelario">
+                                <input type="text" name="idFormarancelario" required class="form-control" placeholder="ID Formulario" id="idFormarancelario" ng-model="ctrl.Farancel.idFormarancelario">
                             </div>
                             <div class="form-group">
                                 <label>Usuario:</label>
-                                <select name="idusuario" class="form-control" id="idusuario">
+                                <select name="usuario" class="form-control" id="usuario" ng-model="ctrl.Farancel.usuario">
 
-                                       <option value="">prueba</option>
+                                       <option value="1">1</option>
+                                       <option value="2">2</option>
 
                                 </select>       
                             </div> 
                             
                             <div class="form-group">
                                 <label>Cod Arancelario:</label>
-                                <input  type="text" name="codarancelario" id="codarancelario" required class="form-control"  ng-model="arancelario.datos.codigo_formexpor" value="" placeholder="Cod Arancelario" >
+                                <input  type="text" name="codarancelarioFormarancelario" id="codarancelarioFormarancelario" required class="form-control"  ng-model="ctrl.Farancel.CodarancelarioFormarancelario"  value="" placeholder="Cod Arancelario" >
                             </div>
                             <div class="form-group">
                                 <button class="btn btn-primary" type="submit" id="guardar"><i class="fa fa-floppy-o"></i> Guardar</button>
+                                <button type="button" ng-click="ctrl.reset()" class="btn btn-warning btn-sm" ng-disabled="FormArancelario.$pristine">Limpiar Formulario</button>
                             </div>
                             </form>
                             </div>

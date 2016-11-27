@@ -13,12 +13,19 @@ import aduana.HibernateUtil;
 import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.orm.hibernate4.HibernateTemplate;
+import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 
 @Service("formArancelarioService")
-@Transactional
 public class FormArancelarioServiceImpl implements FormArancelarioService {
+    private static List<Formularioarancelario> formularioarancelario;
+	
+    @Autowired
+    private HibernateTemplate  hibernateTemplate;
+    
     Session cn = HibernateUtil.getSessionFactory().getCurrentSession();
 
     public FormArancelarioServiceImpl() {
@@ -32,14 +39,14 @@ public class FormArancelarioServiceImpl implements FormArancelarioService {
         return cn;
     }
 
-    public void desconetcar() {
+    public void desconectar() {
         if (cn != null) {
             cn = null;
         }
     }
     
     @Override
-    public Formularioarancelario findById(long id) {
+    public Formularioarancelario findById(int id) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -56,7 +63,7 @@ public class FormArancelarioServiceImpl implements FormArancelarioService {
         } catch (Exception e) {
             t.rollback();
         } finally {
-            desconetcar();
+            desconectar();
         } //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -70,9 +77,23 @@ public class FormArancelarioServiceImpl implements FormArancelarioService {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    @SuppressWarnings("unchecked")
     @Override
     public List<Formularioarancelario> findAllFormularioArancelario() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        //String hql = "FROM Person as p ORDER BY p.pid";
+	System.out.println("algo paso findAllFormularioArancelario");
+        String hql = "FROM formularioarancelario";
+        try {
+            //lista = getSession().createCriteria(Cajero.class).list();
+            formularioarancelario = getSession().createQuery(hql).list();
+            //lista = getSession().createSQLQuery("select * from cajero").list();
+        } catch (Exception e) {
+        } finally {
+            desconectar();
+        }
+        return formularioarancelario;
+     
     }
 
     @Override
