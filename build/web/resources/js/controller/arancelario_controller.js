@@ -29,7 +29,6 @@ app.controller("arancelario",["$scope","FormArancelarioService",function($scope,
     }
 
     function saveFormularioArancelario(Farancel){
-        alert("Entro hijo de putas");
         FormArancelarioService.saveFormularioArancelario(Farancel)
             .then(
             function(errResponse){
