@@ -4,8 +4,9 @@
     Author     : jonathan
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -22,8 +23,7 @@
         <!-- Custom CSS -->
         <link href="${pageContext.request.contextPath}/resources/css/blog-home.css" rel="stylesheet">
     </head>
-<body>
-
+<body ng-app="formularioAra">  
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
@@ -41,13 +41,13 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="http://localhost:8080/SpringMVC0_5/index">Inicio</a>
+                        <a href="http://localhost:8080/SpringMVC0_5-bautista/index">Inicio</a>
                     </li>
                     <li>
-                        <a href="http://localhost:8080/SpringMVC0_5">Formularios Exportacion</a>
+                        <a href="http://localhost:8080/SpringMVC0_5-bautista">Formularios Exportacion</a>
                     </li>
                     <li>
-                        <a href="http://localhost:8080/SpringMVC0_5/formularioArancelario">Formularios Arancelarios</a>
+                        <a href="http://localhost:8080/SpringMVC0_5-bautista/formularioArancelario">Formularios Arancelarios</a>
                     </li>
                 </ul>
             </div>
@@ -96,7 +96,8 @@
                         <th scope="row">1</th>
                         <td>122</td>
                         <td>Otto</td>
-                        <td>@mdo</td>
+                        <td><a ng-click="editArancel(arancelform)" class="blue-button">Edit</a> | <a ng-click="deleteArancel(arancelform)" class="red-button">Borrado</a></td>
+
                       </tr>
                       <tr>
                         <th scope="row">2</th>
@@ -130,30 +131,37 @@
             <!-- Blog Sidebar Widgets Column -->
             <div class="col-md-4">
                 <!-- Blog Categories Well -->
+                
                 <div class="well">
                     <h4>Ingresar</h4>
                     <div class="row">
                         <div class="col-lg-6">
                             <!-- /.col-lg-6 -->
+                            <div class="generic-container" ng-controller="arancelario as ctrl">
+                            <form ng-submit="ctrl.submit()" name="FormArancelario">  
                             <div class="form-group">
-                                <label for="idformarancelario">Id Form:</label>
-                                <input type="text" name="idformarancelario" value="" required class="form-control" placeholder="ID Formulario" id="idformarancelario">
+                                <label for="idFormarancelario">Id Form:</label>
+                                <input type="text" name="idFormarancelario" required class="form-control" placeholder="ID Formulario" id="idFormarancelario" ng-model="ctrl.Farancel.idFormarancelario">
                             </div>
                             <div class="form-group">
                                 <label>Usuario:</label>
-                                <select name="idusuario" class="form-control" id="idusuario">
+                                <select name="usuario" class="form-control" id="usuario" ng-model="ctrl.Farancel.usuario">
 
-                                       <option value="">prueba</option>
+                                       <option value="1">1</option>
+                                       <option value="2">2</option>
 
                                 </select>       
                             </div> 
                             
                             <div class="form-group">
                                 <label>Cod Arancelario:</label>
-                                <input  type="text" name="codarancelario" id="codarancelario" required class="form-control" value="" placeholder="Cod Arancelario" >
+                                <input  type="text" name="codarancelarioFormarancelario" id="codarancelarioFormarancelario" required class="form-control"  ng-model="ctrl.Farancel.CodarancelarioFormarancelario"  value="" placeholder="Cod Arancelario" >
                             </div>
                             <div class="form-group">
                                 <button class="btn btn-primary" type="submit" id="guardar"><i class="fa fa-floppy-o"></i> Guardar</button>
+                                <button type="button" ng-click="ctrl.reset()" class="btn btn-warning btn-sm" ng-disabled="FormArancelario.$pristine">Limpiar Formulario</button>
+                            </div>
+                            </form>
                             </div>
                         </div>
                         <!-- /.col-lg-6 -->
@@ -187,6 +195,13 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="${pageContext.request.contextPath}/resources/js/bootstrap.min.js"></script>
+
+    <script src="${pageContext.request.contextPath}/resources/js/angular.min.js" type="text/javascript"></script>
+    
+    
+    <script src="${pageContext.request.contextPath}/resources/js/controller/arancelario_controller.js" type="text/javascript"></script>
+    <script src="${pageContext.request.contextPath}/resources/js/service/formAranc_service.js" type="text/javascript"></script>
+    
 
 </body>
 
