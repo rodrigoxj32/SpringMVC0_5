@@ -10,7 +10,7 @@ app.controller("arancelario",["$scope","FormArancelarioService",function($scope,
 
     self.submit = submit;
     self.edit = edit;
-    self.remove = remove;
+    self.remove = remove;an
     self.reset = reset;
 
 
@@ -30,7 +30,7 @@ app.controller("arancelario",["$scope","FormArancelarioService",function($scope,
 
     function saveFormularioArancelario(Farancel){
         FormArancelarioService.saveFormularioArancelario(Farancel)
-            .then(
+            .then(findAllFormularioArancelario,
             function(errResponse){
                 console.error('Error mientras se creaba El Formulario en el metodo java');
             }
