@@ -148,10 +148,44 @@
                                 </select>       
                             </div> 
                             
+                                
+                            <div class="form-group">
+                                <label>Transporte:</label>
+                                <select name="transporte" class="form-control" id="producto" ng-model="ctrl.Fexport.id_transp">
+
+                                       <option value="1">1</option>
+                                       <option value="2">2</option>
+
+                                </select>       
+                            </div>    
+                            
                             <div class="form-group">
                                 <label>Cod Exportacion:</label>
                                 <input  type="text" name="codexportacionFormarexportacion" id="codexportacionFormarexportacion" required class="form-control"  ng-model="ctrl.Fexport.codigo_formexpor"  value="" placeholder="Cod Exportacion" >
                             </div>
+                            
+                                
+                            <div class="form-group">
+                                <label for="idOrigen">Origen</label>
+                                <input type="text" name="idOrigen" required class="form-control" placeholder="Origen" id="idOrigen" ng-model="ctrl.Fexport.origen_formexpor">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="idInstancias">Instancias</label>
+                                <input type="text" name="idInstancias" required class="form-control" placeholder="Instancias" id="idOrigen" ng-model="ctrl.Fexport.instancias_formexpor">
+                            </div>                                    
+                                
+                            <div class="form-group">
+                                <label for="idObservaciones">Observaciones</label>
+                                <input type="text" name="idObservaciones" class="form-control" placeholder="Observaciones" id="idObservaciones" ng-model="ctrl.Fexport.observaciones_formexpor">
+                            </div>                                            
+                            
+                            <div class="form-group">
+                                <label for="idFecha">Observaciones</label>
+                                <input type="date" name="idFecha" class="form-control" placeholder="2016-12-31" id="idFecha" ng-model="ctrl.Fexport.fecha_formexpor">
+                            </div>                                            
+                                
+                                
                             <div class="form-group">
                                 <button class="btn btn-primary" type="submit" id="guardar"><i class="fa fa-floppy-o"></i> Guardar</button>
                                 <button type="button" ng-click="ctrl.reset()" class="btn btn-warning btn-sm" ng-disabled="FormExportacion.$pristine">Limpiar Formulario</button>
