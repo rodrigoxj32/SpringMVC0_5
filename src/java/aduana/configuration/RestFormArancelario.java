@@ -25,7 +25,7 @@ import org.springframework.stereotype.Controller;
 
 
 
-@RestController
+@Controller
 public class RestFormArancelario {
     @Autowired(required=true) 
     FormArancelarioService formArancelarioService;  //Service which will do all data retrieval/manipulation work
