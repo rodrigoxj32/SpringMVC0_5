@@ -181,7 +181,7 @@
                             </div>                                            
                             
                             <div class="form-group">
-                                <label for="idFecha">Observaciones</label>
+                                <label for="idFecha">Fecha</label>
                                 <input type="date" name="idFecha" class="form-control" placeholder="2016-12-31" id="idFecha" ng-model="ctrl.Fexport.fecha_formexpor">
                             </div>                                            
                                 
