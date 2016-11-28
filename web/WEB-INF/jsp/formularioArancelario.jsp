@@ -35,19 +35,19 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="http://localhost:8080/SpringMVC0_5/index">SIECA</a>
+                <a class="navbar-brand" href="http://localhost:8080/proyecto2/index">SIECA</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="http://localhost:8080/SpringMVC0_5-bautista/index">Inicio</a>
+                        <a href="http://localhost:8080/proyecto2/index">Inicio</a>
                     </li>
                     <li>
-                        <a href="http://localhost:8080/SpringMVC0_5-bautista">Formularios Exportacion</a>
+                        <a href="http://localhost:8080/proyecto2">Formularios Exportacion</a>
                     </li>
                     <li>
-                        <a href="http://localhost:8080/SpringMVC0_5-bautista/formularioArancelario">Formularios Arancelarios</a>
+                        <a href="http://localhost:8080/proyecto2/formularioArancelario">Formularios Arancelarios</a>
                     </li>
                 </ul>
             </div>
@@ -103,13 +103,13 @@
                         <th scope="row">2</th>
                         <td>Jacob</td>
                         <td>Thornton</td>
-                        <td>@fat</td>
+                        <td><a ng-click="editArancel(arancelform)" class="blue-button">Edit</a> | <a ng-click="deleteArancel(arancelform)" class="red-button">Borrado</a></td>
                       </tr>
                       <tr>
                         <th scope="row">3</th>
                         <td>Jacob</td>
                         <td>Thornton</td>
-                        <td>@fat</td>
+                        <td><a ng-click="editArancel(arancelform)" class="blue-button">Edit</a> | <a ng-click="deleteArancel(arancelform)" class="red-button">Borrado</a></td>
                       </tr>
                     </tbody>
                   </table>
