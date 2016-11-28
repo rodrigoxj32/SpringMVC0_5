@@ -91,14 +91,14 @@
                         <th scope="row">1</th>
                         <td>122</td>
                         <td>Otto</td>
-                        <td><a ng-click="editArancel(exportform)" class="blue-button">Edit</a> | <a ng-click="deleteArancel(exportform)" class="red-button">Borrado</a></td>
+                        <td><a ng-click="editExportacion(exportform)" class="blue-button">Edit</a> | <a ng-click="deleteExportacion(exportform)" class="red-button">Borrado</a></td>
 
                       </tr>
                       <tr>
                         <th scope="row">2</th>
                         <td>Jacob</td>
                         <td>Thornton</td>
-                         <td><a ng-click="editArancel(exportform)" class="blue-button">Edit</a> | <a ng-click="deleteArancel(exportform)" class="red-button">Borrado</a></td>
+                         <td><a ng-click="editExportacion(exportform)" class="blue-button">Edit</a> | <a ng-click="deleteExportacion(exportform)" class="red-button">Borrado</a></td>
                       </tr>
                       <tr>
                         <th scope="row">3</th>
