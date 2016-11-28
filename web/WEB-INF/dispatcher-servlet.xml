@@ -16,7 +16,7 @@
    
     <bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping"/>
     <context:annotation-config />
-    <context:component-scan base-package="aduana.configuration" />
+    <context:component-scan base-package="aduana.controller" />
     <mvc:annotation-driven />
     <mvc:resources mapping="/resources/**" location="/resources/" cache-period="31556926"/>
     

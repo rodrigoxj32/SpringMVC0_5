@@ -119,6 +119,7 @@ public class FormExportacionServiceImpl implements FormExportacionService {
             formularioexportacion= getSession().createQuery(hql).list();
             //lista = getSession().createSQLQuery("select * from cajero").list();
         } catch (Exception e) {
+            
         } finally {
             desconectar();
         }

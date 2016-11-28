@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package aduana.configuration;
+package aduana.controller;
 import aduana.modelo.Formularioexportacion;
 import aduana.service.FormExportacionService;
 import aduana.service.FormExportacionServiceImpl;
@@ -23,18 +23,29 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 import org.springframework.stereotype.Controller;
 
+import aduana.modelo.Formularioexportacion;
+import aduana.HibernateUtil;
+import aduana.modelo.Formularioarancelario;
+
+import java.util.List;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
 @RestController
 public class RestExportacion {
-    @Autowired( required = false)
+        @Autowired( required = false)
     FormExportacionService servicioExportacion;
-    
         
+
     //-------------------Retrieve All FormularioArancelario--------------------------------------------------------
      
     @RequestMapping(value = "/FE/", method = RequestMethod.GET)
     public ResponseEntity<List<Formularioexportacion>> listAllUsers() {
         System.out.println("metodo de busqueda exportacion");
+        
+        
         List<Formularioexportacion> formAran = servicioExportacion.findAllFormExportacion();
+               
         if(formAran.isEmpty()){
             return new ResponseEntity<List<Formularioexportacion>>(HttpStatus.NO_CONTENT);//You many decide to return HttpStatus.NOT_FOUND
         }
