@@ -25,10 +25,10 @@ public class FormArancelarioServiceImpl implements FormArancelarioService {
     
     private static List<Formularioarancelario> formularioarancelario;
 	
-   
+    @Autowired
     private HibernateTemplate  hibernateTemplate;
     
-
+    @Autowired
     Session cn = HibernateUtil.getSessionFactory().getCurrentSession();
 
     public FormArancelarioServiceImpl() {
@@ -50,7 +50,19 @@ public class FormArancelarioServiceImpl implements FormArancelarioService {
     
     @Override
     public Formularioarancelario findById(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+              Formularioarancelario aux = null;
+        Transaction t = getSession().getTransaction();    
+        try {
+            t.begin();           
+            aux = (Formularioarancelario) getSession().createCriteria(Formularioarancelario.class).setFirstResult(id).uniqueResult();
+            t.commit();
+
+        } catch (Exception e) {
+             t.rollback();
+        } finally {
+           desconectar();
+        }
+        return aux;
     }
 
     @Override
@@ -72,16 +84,25 @@ public class FormArancelarioServiceImpl implements FormArancelarioService {
 
     @Override
     public void updateFormularioArancelario(Formularioarancelario fa) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+             Transaction t = getSession().getTransaction();
+        try {
+            t.begin();
+            getSession().update(fa);
+            t.commit();
+        } catch (Exception e) {
+            t.rollback();
+        } finally {
+            desconectar();
+        }
     }
 
     @Override
-    public void deleteFormularioArancelarioById(long id) {
+    public void deleteFormularioArancelarioById(int id) {
         
         Transaction t = getSession().getTransaction();
         try {
             t.begin();
-            
+             getSession().delete(id);
             t.commit();
         } catch (Exception e) {
             t.rollback();
@@ -91,12 +112,12 @@ public class FormArancelarioServiceImpl implements FormArancelarioService {
 
     }
 
-    @SuppressWarnings("unchecked")
+   
     @Override
     public List<Formularioarancelario> findAllFormularioArancelario() {        
         //String hql = "FROM Person as p ORDER BY p.pid";
 	System.out.println("algo paso findAllFormularioArancelario");
-        String hql = "FROM igf.formularioarancelario";
+        String hql = "FROM formularioarancelario";
         try {
             //lista = getSession().createCriteria(Cajero.class).list();
             formularioarancelario = getSession().createQuery(hql).list();

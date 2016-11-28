@@ -27,7 +27,7 @@ import org.springframework.stereotype.Controller;
 
 @RestController
 public class RestArancel {
-    
+    @Autowired( required = false)
     FormArancelarioService formArancelarioService ;  //Service which will do all data retrieval/manipulation work
  
     
@@ -123,6 +123,5 @@ public class RestArancel {
         formArancelarioService.deleteAllFormularioArancelario();
         return new ResponseEntity<Formularioarancelario>(HttpStatus.NO_CONTENT);
     }
-    
 
 }
