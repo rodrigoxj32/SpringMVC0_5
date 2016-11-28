@@ -4,9 +4,10 @@
     Author     : jonathan
 --%>
 
-
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -41,13 +42,13 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="http://localhost:8080/SpringMVC0_5/index">Inicio</a>
+                        <a href="http://localhost:8080/SpringMVC0_5-bautista/index">Inicio</a>
                     </li>
                     <li>
-                        <a href="http://localhost:8080/SpringMVC0_5">Formularios Exportacion</a>
+                        <a href="http://localhost:8080/SpringMVC0_5-bautista">Formularios Exportacion</a>
                     </li>
                     <li>
-                        <a href="http://localhost:8080/SpringMVC0_5/formularioArancelario">Formularios Arancelarios</a>
+                        <a href="http://localhost:8080/SpringMVC0_5-bautista/formularioArancelario">Formularios Arancelarios</a>
                     </li>
                 </ul>
             </div>
@@ -196,9 +197,9 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="${pageContext.request.contextPath}/resources/js/bootstrap.min.js"></script>
 
-    <script src="${pageContext.request.contextPath}/resources/js/angular.min.js" type="text/javascript"></script>
+    <script src="${pageContext.request.contextPath}/resources/js/angular.js" type="text/javascript"></script>
     
-    
+    <script src="${pageContext.request.contextPath}/resources/js/app.js" type="text/javascript"></script>
     <script src="${pageContext.request.contextPath}/resources/js/controller/arancelario_controller.js" type="text/javascript"></script>
     <script src="${pageContext.request.contextPath}/resources/js/service/formAranc_service.js" type="text/javascript"></script>
     

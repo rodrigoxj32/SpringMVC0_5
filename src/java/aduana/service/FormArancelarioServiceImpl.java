@@ -21,11 +21,14 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service("formArancelarioService")
 public class FormArancelarioServiceImpl implements FormArancelarioService {
+     
+    
     private static List<Formularioarancelario> formularioarancelario;
 	
-    @Autowired
+   
     private HibernateTemplate  hibernateTemplate;
     
+
     Session cn = HibernateUtil.getSessionFactory().getCurrentSession();
 
     public FormArancelarioServiceImpl() {
@@ -74,16 +77,26 @@ public class FormArancelarioServiceImpl implements FormArancelarioService {
 
     @Override
     public void deleteFormularioArancelarioById(long id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+        Transaction t = getSession().getTransaction();
+        try {
+            t.begin();
+            
+            t.commit();
+        } catch (Exception e) {
+            t.rollback();
+        } finally {
+            desconectar();
+        }
+
     }
 
     @SuppressWarnings("unchecked")
     @Override
-    public List<Formularioarancelario> findAllFormularioArancelario() {
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public List<Formularioarancelario> findAllFormularioArancelario() {        
         //String hql = "FROM Person as p ORDER BY p.pid";
 	System.out.println("algo paso findAllFormularioArancelario");
-        String hql = "FROM formularioarancelario";
+        String hql = "FROM igf.formularioarancelario";
         try {
             //lista = getSession().createCriteria(Cajero.class).list();
             formularioarancelario = getSession().createQuery(hql).list();

@@ -1,10 +1,10 @@
 'use strict';
 
 
-var app=angular.module("formularioAra");
+var app=angular.module('formularioAra');
   
 
-app.factory("FormArancelarioService",['$http', '$q',function($http, $q) {
+app.factory('FormArancelarioService',['$http', '$q',function($http, $q) {
   var REST_SERVICE_URI = 'http://localhost:8080/SpringMVC0_5/FA/';
   
       var factory = {
@@ -30,16 +30,18 @@ app.factory("FormArancelarioService",['$http', '$q',function($http, $q) {
         );
         return deferred.promise;
     }
-
-   function saveFormularioArancelario(Farancel) {
+    
+    function saveFormularioArancelario(Farancel) {
+       console.error('save de los servicios angular',Farancel);
         var deferred = $q.defer();
-        $http.post(REST_SERVICE_URI, Farancel)
+        $http.post(REST_SERVICE_URI, Farancel,{'Content-Type' : 'application/json'})
             .then(
             function (response) {
                 deferred.resolve(response.data);
             },
             function(errResponse){
-                console.error('Error Mientras Se creaba el fomulario Arancelario');
+                console.error(errResponse);
+                console.error('Error Mientras Se creaba el Fomulario Arancelario  en el Save');
                 deferred.reject(errResponse);
             }
         );

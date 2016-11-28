@@ -1,16 +1,16 @@
 'use strict';
 
 
-var app=angular.module("formularioAra",[]);
+var app=angular.module('formularioAra',[]);
   
-app.controller("arancelario",["$scope","FormArancelarioService",function($scope,FormArancelarioService) {
+app.controller('arancelario',['$scope','FormArancelarioService',function($scope,FormArancelarioService) {
   var self = this;
     self.Farancel={idFormarancelario:'',usuario:'',CodarancelarioFormarancelario:''};
     self.Farancels=[];
 
     self.submit = submit;
     self.edit = edit;
-    self.remove = remove;an
+    self.remove = remove;
     self.reset = reset;
 
 
@@ -29,6 +29,7 @@ app.controller("arancelario",["$scope","FormArancelarioService",function($scope,
     }
 
     function saveFormularioArancelario(Farancel){
+        console.log('entro al metodo donde esta el metodo java', FormArancelarioService);
         FormArancelarioService.saveFormularioArancelario(Farancel)
             .then(findAllFormularioArancelario,
             function(errResponse){
@@ -36,6 +37,7 @@ app.controller("arancelario",["$scope","FormArancelarioService",function($scope,
             }
         );
     }
+    
 
     function updateUser(Farancel, id){
         FormArancelarioService.updateUser(Farancel, id)
@@ -58,7 +60,6 @@ app.controller("arancelario",["$scope","FormArancelarioService",function($scope,
     }
 
     function submit() {
-        alert("Entro casi lo crea");
         if(self.Farancel.idFormarancelario!==null){
             console.log('Guardando El nuevo Formulario Arancelario', self.Farancel);
             saveFormularioArancelario(self.Farancel);
