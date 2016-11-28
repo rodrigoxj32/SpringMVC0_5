@@ -50,7 +50,19 @@ public class FormArancelarioServiceImpl implements FormArancelarioService {
     
     @Override
     public Formularioarancelario findById(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+              Formularioarancelario aux = null;
+        Transaction t = getSession().getTransaction();    
+        try {
+            t.begin();           
+            aux = (Formularioarancelario) getSession().createCriteria(Formularioarancelario.class).setFirstResult(id).uniqueResult();
+            t.commit();
+
+        } catch (Exception e) {
+             t.rollback();
+        } finally {
+           desconectar();
+        }
+        return aux;
     }
 
     @Override
@@ -72,16 +84,25 @@ public class FormArancelarioServiceImpl implements FormArancelarioService {
 
     @Override
     public void updateFormularioArancelario(Formularioarancelario fa) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+             Transaction t = getSession().getTransaction();
+        try {
+            t.begin();
+            getSession().update(fa);
+            t.commit();
+        } catch (Exception e) {
+            t.rollback();
+        } finally {
+            desconectar();
+        }
     }
 
     @Override
-    public void deleteFormularioArancelarioById(long id) {
+    public void deleteFormularioArancelarioById(Formularioarancelario fa) {
         
         Transaction t = getSession().getTransaction();
         try {
             t.begin();
-            
+             getSession().delete(fa);
             t.commit();
         } catch (Exception e) {
             t.rollback();
@@ -91,7 +112,7 @@ public class FormArancelarioServiceImpl implements FormArancelarioService {
 
     }
 
-    @SuppressWarnings("unchecked")
+   
     @Override
     public List<Formularioarancelario> findAllFormularioArancelario() {        
         //String hql = "FROM Person as p ORDER BY p.pid";
