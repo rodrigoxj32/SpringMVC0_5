@@ -97,12 +97,12 @@ public class FormArancelarioServiceImpl implements FormArancelarioService {
     }
 
     @Override
-    public void deleteFormularioArancelarioById(int id) {
+    public void deleteFormularioArancelarioById(int fa) {
         
         Transaction t = getSession().getTransaction();
         try {
             t.begin();
-             getSession().delete(id);
+             getSession().delete(fa);
             t.commit();
         } catch (Exception e) {
             t.rollback();

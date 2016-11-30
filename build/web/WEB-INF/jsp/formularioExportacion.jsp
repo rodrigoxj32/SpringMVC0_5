@@ -82,7 +82,7 @@
                       <tr>
                         <th>#</th>
                         <th>Usuario</th>
-                        <th>Cod Arancelario</th>
+                        <th>Cod de Exportacion</th>
                         <th>Opciones</th>
                       </tr>
                     </thead>
@@ -91,20 +91,20 @@
                         <th scope="row">1</th>
                         <td>122</td>
                         <td>Otto</td>
-                        <td><a ng-click="editArancel(exportform)" class="blue-button">Edit</a> | <a ng-click="deleteArancel(exportform)" class="red-button">Borrado</a></td>
+                        <td><a ng-click="editExportacion(exportform)" class="blue-button">Edit</a> | <a ng-click="deleteExportacion(exportform)" class="red-button">Borrado</a></td>
 
                       </tr>
                       <tr>
                         <th scope="row">2</th>
                         <td>Jacob</td>
                         <td>Thornton</td>
-                        <td>@fat</td>
+                         <td><a ng-click="editExportacion(exportform)" class="blue-button">Edit</a> | <a ng-click="deleteExportacion(exportform)" class="red-button">Borrado</a></td>
                       </tr>
                       <tr>
                         <th scope="row">3</th>
                         <td>Jacob</td>
                         <td>Thornton</td>
-                        <td>@fat</td>
+                         <td><a ng-click="editArancel(exportform)" class="blue-button">Edit</a> | <a ng-click="deleteArancel(exportform)" class="red-button">Borrado</a></td>
                       </tr>
                     </tbody>
                   </table>
@@ -134,19 +134,8 @@
                             <!-- /.col-lg-6 -->
                             <div class="generic-container" ng-controller="exportacion as ctrl">
                             <form ng-submit="ctrl.submit()" name="FormExportacion">  
-                            <div class="form-group">
-                                <label for="idFormarexportacion">Id Form:</label>
-                                <input type="text" name="idFormexportacion" required class="form-control" placeholder="ID Formulario" id="idFormexportacion" ng-model="ctrl.Fexport.id_formexpor">
-                            </div>
-                            <div class="form-group">
-                                <label>Usuario:</label>
-                                <select name="usuario" class="form-control" id="usuario" ng-model="ctrl.Fexport.id_usuario">
-
-                                       <option value="1">1</option>
-                                       <option value="2">2</option>
-
-                                </select>       
-                            </div> 
+                            
+                       
                             
                                 
                             <div class="form-group">
@@ -181,7 +170,7 @@
                             </div>                                            
                             
                             <div class="form-group">
-                                <label for="idFecha">Observaciones</label>
+                                <label for="idFecha">Fecha</label>
                                 <input type="date" name="idFecha" class="form-control" placeholder="2016-12-31" id="idFecha" ng-model="ctrl.Fexport.fecha_formexpor">
                             </div>                                            
                                 

@@ -21,7 +21,7 @@ public interface FormArancelarioService {
 	
 	void updateFormularioArancelario(Formularioarancelario fa);
 	
-	void deleteFormularioArancelarioById(int id);
+	void deleteFormularioArancelarioById(int fa);
 
 	List<Formularioarancelario> findAllFormularioArancelario(); 
 	
