@@ -1,5 +1,5 @@
 package aduana.modelo;
-// Generated 11-20-2016 10:33:46 AM by Hibernate Tools 4.3.1
+// Generated 11-30-2016 03:24:13 PM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -16,20 +16,22 @@ public class Usuario  implements java.io.Serializable {
      private Tipousuario tipousuario;
      private String nombreUsuario;
      private String passwordUsuario;
-     private Set formularioarancelarios = new HashSet(0);
-     private Set otrosformularioses = new HashSet(0);
-     private Set formularioexportacions = new HashSet(0);
+     private Set<Formularioarancelario> formularioarancelarios = new HashSet<Formularioarancelario>(0);
+     private Set<Otrosformularios> otrosformularioses = new HashSet<Otrosformularios>(0);
+     private Set<Formularioexportacion> formularioexportacions = new HashSet<Formularioexportacion>(0);
 
     public Usuario() {
     }
 
 	
-    public Usuario(int idUsuario, String nombreUsuario, String passwordUsuario) {
+    public Usuario(int idUsuario, Perfilexportador perfilexportador, Tipousuario tipousuario, String nombreUsuario, String passwordUsuario) {
         this.idUsuario = idUsuario;
+        this.perfilexportador = perfilexportador;
+        this.tipousuario = tipousuario;
         this.nombreUsuario = nombreUsuario;
         this.passwordUsuario = passwordUsuario;
     }
-    public Usuario(int idUsuario, Perfilexportador perfilexportador, Tipousuario tipousuario, String nombreUsuario, String passwordUsuario, Set formularioarancelarios, Set otrosformularioses, Set formularioexportacions) {
+    public Usuario(int idUsuario, Perfilexportador perfilexportador, Tipousuario tipousuario, String nombreUsuario, String passwordUsuario, Set<Formularioarancelario> formularioarancelarios, Set<Otrosformularios> otrosformularioses, Set<Formularioexportacion> formularioexportacions) {
        this.idUsuario = idUsuario;
        this.perfilexportador = perfilexportador;
        this.tipousuario = tipousuario;
@@ -75,25 +77,25 @@ public class Usuario  implements java.io.Serializable {
     public void setPasswordUsuario(String passwordUsuario) {
         this.passwordUsuario = passwordUsuario;
     }
-    public Set getFormularioarancelarios() {
+    public Set<Formularioarancelario> getFormularioarancelarios() {
         return this.formularioarancelarios;
     }
     
-    public void setFormularioarancelarios(Set formularioarancelarios) {
+    public void setFormularioarancelarios(Set<Formularioarancelario> formularioarancelarios) {
         this.formularioarancelarios = formularioarancelarios;
     }
-    public Set getOtrosformularioses() {
+    public Set<Otrosformularios> getOtrosformularioses() {
         return this.otrosformularioses;
     }
     
-    public void setOtrosformularioses(Set otrosformularioses) {
+    public void setOtrosformularioses(Set<Otrosformularios> otrosformularioses) {
         this.otrosformularioses = otrosformularioses;
     }
-    public Set getFormularioexportacions() {
+    public Set<Formularioexportacion> getFormularioexportacions() {
         return this.formularioexportacions;
     }
     
-    public void setFormularioexportacions(Set formularioexportacions) {
+    public void setFormularioexportacions(Set<Formularioexportacion> formularioexportacions) {
         this.formularioexportacions = formularioexportacions;
     }
 

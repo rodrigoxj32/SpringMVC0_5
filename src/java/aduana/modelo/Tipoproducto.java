@@ -1,5 +1,5 @@
 package aduana.modelo;
-// Generated 11-20-2016 10:33:46 AM by Hibernate Tools 4.3.1
+// Generated 11-30-2016 03:24:13 PM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -15,7 +15,7 @@ public class Tipoproducto  implements java.io.Serializable {
      private String descripcionTipopro;
      private String clasificacionTipopro;
      private String codigoTipopro;
-     private Set productos = new HashSet(0);
+     private Set<Producto> productos = new HashSet<Producto>(0);
 
     public Tipoproducto() {
     }
@@ -27,7 +27,7 @@ public class Tipoproducto  implements java.io.Serializable {
         this.clasificacionTipopro = clasificacionTipopro;
         this.codigoTipopro = codigoTipopro;
     }
-    public Tipoproducto(int idTipopro, String descripcionTipopro, String clasificacionTipopro, String codigoTipopro, Set productos) {
+    public Tipoproducto(int idTipopro, String descripcionTipopro, String clasificacionTipopro, String codigoTipopro, Set<Producto> productos) {
        this.idTipopro = idTipopro;
        this.descripcionTipopro = descripcionTipopro;
        this.clasificacionTipopro = clasificacionTipopro;
@@ -63,11 +63,11 @@ public class Tipoproducto  implements java.io.Serializable {
     public void setCodigoTipopro(String codigoTipopro) {
         this.codigoTipopro = codigoTipopro;
     }
-    public Set getProductos() {
+    public Set<Producto> getProductos() {
         return this.productos;
     }
     
-    public void setProductos(Set productos) {
+    public void setProductos(Set<Producto> productos) {
         this.productos = productos;
     }
 

@@ -1,48 +1,39 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 11-20-2016 10:33:47 AM by Hibernate Tools 4.3.1 -->
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 11-30-2016 03:24:22 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-  <class name="aduana.modelo.Formularioexportacion" optimistic-lock="version" schema="public" table="formularioexportacion">
-    <id name="idFormexpor" type="int">
-      <column name="id_formexpor"/>
-      <generator class="assigned"/>
-    </id>
-    <many-to-one class="aduana.modelo.Transporte" fetch="select" name="transporte">
-      <column name="id_transp"/>
-    </many-to-one>
-    <many-to-one class="aduana.modelo.Usuario" fetch="select" name="usuario">
-      <column name="id_usuario"/>
-    </many-to-one>
-    <property name="codigoFormexpor" type="string">
-      <column length="100" name="codigo_formexpor" not-null="true"/>
-    </property>
-    <property name="origenFormexpor" type="string">
-      <column length="100" name="origen_formexpor" not-null="true"/>
-    </property>
-    <property name="instanciasFormexpor" type="string">
-      <column length="100" name="instancias_formexpor" not-null="true"/>
-    </property>
-    <property name="observacionesFormexpor" type="string">
-      <column length="100" name="observaciones_formexpor" not-null="true"/>
-    </property>
-    <property name="fechaFormexpor" type="date">
-      <column length="13" name="fecha_formexpor" not-null="true"/>
-    </property>
-    <set fetch="select" inverse="true" lazy="true" name="paises" table="formexpor_pais">
-      <key>
-        <column name="id_formexpor" not-null="true"/>
-      </key>
-      <many-to-many entity-name="modelo.Pais">
-        <column name="id_pais" not-null="true"/>
-      </many-to-many>
-    </set>
-    <set fetch="select" inverse="true" lazy="true" name="pagos" table="formexpor_pago">
-      <key>
-        <column name="id_formexpor" not-null="true"/>
-      </key>
-      <many-to-many entity-name="modelo.Pago">
-        <column name="id_pago" not-null="true"/>
-      </many-to-many>
-    </set>
-  </class>
+    <class name="aduana.modelo.Formularioexportacion" table="formularioexportacion" schema="public" optimistic-lock="version">
+        <id name="idFe" type="int">
+            <column name="id_fe" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="pago" class="aduana.modelo.Pago" fetch="select">
+            <column name="id_pago" not-null="true" />
+        </many-to-one>
+        <many-to-one name="pais" class="aduana.modelo.Pais" fetch="select">
+            <column name="id_pais" not-null="true" />
+        </many-to-one>
+        <many-to-one name="transporte" class="aduana.modelo.Transporte" fetch="select">
+            <column name="id_transp" not-null="true" />
+        </many-to-one>
+        <many-to-one name="usuario" class="aduana.modelo.Usuario" fetch="select">
+            <column name="id_usuario" not-null="true" />
+        </many-to-one>
+        <property name="codigoFe" type="string">
+            <column name="codigo_fe" length="100" not-null="true" />
+        </property>
+        <property name="origenFe" type="string">
+            <column name="origen_fe" length="100" not-null="true" />
+        </property>
+        <property name="instanciasFe" type="string">
+            <column name="instancias_fe" length="100" not-null="true" />
+        </property>
+        <property name="observacionesFe" type="string">
+            <column name="observaciones_fe" length="100" not-null="true" />
+        </property>
+        <property name="fechaFe" type="date">
+            <column name="fecha_fe" length="13" not-null="true" />
+        </property>
+    </class>
 </hibernate-mapping>

@@ -1,5 +1,5 @@
 package aduana.modelo;
-// Generated 11-20-2016 10:33:46 AM by Hibernate Tools 4.3.1
+// Generated 11-30-2016 03:24:13 PM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -15,18 +15,19 @@ public class Transporte  implements java.io.Serializable {
      private Tipotransporte tipotransporte;
      private String nombreTransp;
      private String descripcionTransp;
-     private Set formularioexportacions = new HashSet(0);
+     private Set<Formularioexportacion> formularioexportacions = new HashSet<Formularioexportacion>(0);
 
     public Transporte() {
     }
 
 	
-    public Transporte(int idTransp, String nombreTransp, String descripcionTransp) {
+    public Transporte(int idTransp, Tipotransporte tipotransporte, String nombreTransp, String descripcionTransp) {
         this.idTransp = idTransp;
+        this.tipotransporte = tipotransporte;
         this.nombreTransp = nombreTransp;
         this.descripcionTransp = descripcionTransp;
     }
-    public Transporte(int idTransp, Tipotransporte tipotransporte, String nombreTransp, String descripcionTransp, Set formularioexportacions) {
+    public Transporte(int idTransp, Tipotransporte tipotransporte, String nombreTransp, String descripcionTransp, Set<Formularioexportacion> formularioexportacions) {
        this.idTransp = idTransp;
        this.tipotransporte = tipotransporte;
        this.nombreTransp = nombreTransp;
@@ -62,11 +63,11 @@ public class Transporte  implements java.io.Serializable {
     public void setDescripcionTransp(String descripcionTransp) {
         this.descripcionTransp = descripcionTransp;
     }
-    public Set getFormularioexportacions() {
+    public Set<Formularioexportacion> getFormularioexportacions() {
         return this.formularioexportacions;
     }
     
-    public void setFormularioexportacions(Set formularioexportacions) {
+    public void setFormularioexportacions(Set<Formularioexportacion> formularioexportacions) {
         this.formularioexportacions = formularioexportacions;
     }
 

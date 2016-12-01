@@ -73,13 +73,13 @@ public class RestExportacion {
      
     @RequestMapping(value = "/FE/", method = RequestMethod.POST)
     public ResponseEntity<Void> createUser(@RequestBody Formularioexportacion formAran,    UriComponentsBuilder ucBuilder) {
-        System.out.println("Creando formulario exportacion " + formAran.getIdFormexpor());
+        System.out.println("Creando formulario exportacion " + formAran.getIdFe());
  
          
         servicioExportacion.saveFormularioExportacion(formAran);
  
         HttpHeaders headers = new HttpHeaders();
-        headers.setLocation(ucBuilder.path("/FE/{id}").buildAndExpand(formAran.getIdFormexpor()).toUri());
+        headers.setLocation(ucBuilder.path("/FE/{id}").buildAndExpand(formAran.getIdFe()).toUri());
         return new ResponseEntity<Void>(headers, HttpStatus.CREATED);
     }
  
@@ -98,12 +98,12 @@ public class RestExportacion {
             return new ResponseEntity<Formularioexportacion>(HttpStatus.NOT_FOUND);
         }
  
-        currentExportacion.setCodigoFormexpor(formExport.getCodigoFormexpor());
-        currentExportacion.setFechaFormexpor(formExport.getFechaFormexpor());
-        currentExportacion.setInstanciasFormexpor(formExport.getInstanciasFormexpor());
-        currentExportacion.setObservacionesFormexpor(formExport.getObservacionesFormexpor());
-        currentExportacion.setOrigenFormexpor(formExport.getOrigenFormexpor());
-        currentExportacion.setPaises(formExport.getPaises());
+        currentExportacion.setCodigoFe(formExport.getCodigoFe());
+        currentExportacion.setFechaFe(formExport.getFechaFe());
+        currentExportacion.setInstanciasFe(formExport.getInstanciasFe());
+        currentExportacion.setObservacionesFe(formExport.getObservacionesFe());
+        currentExportacion.setOrigenFe(formExport.getOrigenFe());
+        currentExportacion.setPais(formExport.getPais());
         currentExportacion.setTransporte(formExport.getTransporte());
         currentExportacion.setUsuario(formExport.getUsuario());
          

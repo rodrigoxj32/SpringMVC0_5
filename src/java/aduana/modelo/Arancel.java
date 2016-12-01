@@ -1,5 +1,5 @@
 package aduana.modelo;
-// Generated 11-20-2016 10:33:46 AM by Hibernate Tools 4.3.1
+// Generated 11-30-2016 03:24:13 PM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -13,18 +13,18 @@ public class Arancel  implements java.io.Serializable {
 
      private int idArancel;
      private Tipoarancel tipoarancel;
-     private String precioArancel;
-     private Set productos = new HashSet(0);
+     private double precioArancel;
+     private Set<Producto> productos = new HashSet<Producto>(0);
 
     public Arancel() {
     }
 
 	
-    public Arancel(int idArancel, String precioArancel) {
+    public Arancel(int idArancel, double precioArancel) {
         this.idArancel = idArancel;
         this.precioArancel = precioArancel;
     }
-    public Arancel(int idArancel, Tipoarancel tipoarancel, String precioArancel, Set productos) {
+    public Arancel(int idArancel, Tipoarancel tipoarancel, double precioArancel, Set<Producto> productos) {
        this.idArancel = idArancel;
        this.tipoarancel = tipoarancel;
        this.precioArancel = precioArancel;
@@ -45,18 +45,18 @@ public class Arancel  implements java.io.Serializable {
     public void setTipoarancel(Tipoarancel tipoarancel) {
         this.tipoarancel = tipoarancel;
     }
-    public String getPrecioArancel() {
+    public double getPrecioArancel() {
         return this.precioArancel;
     }
     
-    public void setPrecioArancel(String precioArancel) {
+    public void setPrecioArancel(double precioArancel) {
         this.precioArancel = precioArancel;
     }
-    public Set getProductos() {
+    public Set<Producto> getProductos() {
         return this.productos;
     }
     
-    public void setProductos(Set productos) {
+    public void setProductos(Set<Producto> productos) {
         this.productos = productos;
     }
 

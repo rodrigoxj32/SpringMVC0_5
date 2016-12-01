@@ -1,5 +1,5 @@
 package aduana.modelo;
-// Generated 11-20-2016 10:33:46 AM by Hibernate Tools 4.3.1
+// Generated 11-30-2016 03:24:13 PM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -14,7 +14,7 @@ public class Catalogopagos  implements java.io.Serializable {
      private int idCatpagos;
      private String codigoCatpagos;
      private String clasificacionCatpagos;
-     private Set pagos = new HashSet(0);
+     private Set<Pago> pagos = new HashSet<Pago>(0);
 
     public Catalogopagos() {
     }
@@ -25,7 +25,7 @@ public class Catalogopagos  implements java.io.Serializable {
         this.codigoCatpagos = codigoCatpagos;
         this.clasificacionCatpagos = clasificacionCatpagos;
     }
-    public Catalogopagos(int idCatpagos, String codigoCatpagos, String clasificacionCatpagos, Set pagos) {
+    public Catalogopagos(int idCatpagos, String codigoCatpagos, String clasificacionCatpagos, Set<Pago> pagos) {
        this.idCatpagos = idCatpagos;
        this.codigoCatpagos = codigoCatpagos;
        this.clasificacionCatpagos = clasificacionCatpagos;
@@ -53,11 +53,11 @@ public class Catalogopagos  implements java.io.Serializable {
     public void setClasificacionCatpagos(String clasificacionCatpagos) {
         this.clasificacionCatpagos = clasificacionCatpagos;
     }
-    public Set getPagos() {
+    public Set<Pago> getPagos() {
         return this.pagos;
     }
     
-    public void setPagos(Set pagos) {
+    public void setPagos(Set<Pago> pagos) {
         this.pagos = pagos;
     }
 

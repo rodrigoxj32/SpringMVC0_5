@@ -1,5 +1,5 @@
 package aduana.modelo;
-// Generated 11-20-2016 10:33:46 AM by Hibernate Tools 4.3.1
+// Generated 11-30-2016 03:24:13 PM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -11,63 +11,63 @@ import java.util.Set;
 public class Perfilexportador  implements java.io.Serializable {
 
 
-     private int idPerfilexpor;
-     private String codigoPerfilexpor;
-     private String domicilioPerfilexpor;
-     private String idtributarioPerfilexpor;
-     private Set usuarios = new HashSet(0);
+     private int idPe;
+     private String codigoPe;
+     private String domicilioPe;
+     private String idtributarioPe;
+     private Set<Usuario> usuarios = new HashSet<Usuario>(0);
 
     public Perfilexportador() {
     }
 
 	
-    public Perfilexportador(int idPerfilexpor, String codigoPerfilexpor, String domicilioPerfilexpor, String idtributarioPerfilexpor) {
-        this.idPerfilexpor = idPerfilexpor;
-        this.codigoPerfilexpor = codigoPerfilexpor;
-        this.domicilioPerfilexpor = domicilioPerfilexpor;
-        this.idtributarioPerfilexpor = idtributarioPerfilexpor;
+    public Perfilexportador(int idPe, String codigoPe, String domicilioPe, String idtributarioPe) {
+        this.idPe = idPe;
+        this.codigoPe = codigoPe;
+        this.domicilioPe = domicilioPe;
+        this.idtributarioPe = idtributarioPe;
     }
-    public Perfilexportador(int idPerfilexpor, String codigoPerfilexpor, String domicilioPerfilexpor, String idtributarioPerfilexpor, Set usuarios) {
-       this.idPerfilexpor = idPerfilexpor;
-       this.codigoPerfilexpor = codigoPerfilexpor;
-       this.domicilioPerfilexpor = domicilioPerfilexpor;
-       this.idtributarioPerfilexpor = idtributarioPerfilexpor;
+    public Perfilexportador(int idPe, String codigoPe, String domicilioPe, String idtributarioPe, Set<Usuario> usuarios) {
+       this.idPe = idPe;
+       this.codigoPe = codigoPe;
+       this.domicilioPe = domicilioPe;
+       this.idtributarioPe = idtributarioPe;
        this.usuarios = usuarios;
     }
    
-    public int getIdPerfilexpor() {
-        return this.idPerfilexpor;
+    public int getIdPe() {
+        return this.idPe;
     }
     
-    public void setIdPerfilexpor(int idPerfilexpor) {
-        this.idPerfilexpor = idPerfilexpor;
+    public void setIdPe(int idPe) {
+        this.idPe = idPe;
     }
-    public String getCodigoPerfilexpor() {
-        return this.codigoPerfilexpor;
-    }
-    
-    public void setCodigoPerfilexpor(String codigoPerfilexpor) {
-        this.codigoPerfilexpor = codigoPerfilexpor;
-    }
-    public String getDomicilioPerfilexpor() {
-        return this.domicilioPerfilexpor;
+    public String getCodigoPe() {
+        return this.codigoPe;
     }
     
-    public void setDomicilioPerfilexpor(String domicilioPerfilexpor) {
-        this.domicilioPerfilexpor = domicilioPerfilexpor;
+    public void setCodigoPe(String codigoPe) {
+        this.codigoPe = codigoPe;
     }
-    public String getIdtributarioPerfilexpor() {
-        return this.idtributarioPerfilexpor;
+    public String getDomicilioPe() {
+        return this.domicilioPe;
     }
     
-    public void setIdtributarioPerfilexpor(String idtributarioPerfilexpor) {
-        this.idtributarioPerfilexpor = idtributarioPerfilexpor;
+    public void setDomicilioPe(String domicilioPe) {
+        this.domicilioPe = domicilioPe;
     }
-    public Set getUsuarios() {
+    public String getIdtributarioPe() {
+        return this.idtributarioPe;
+    }
+    
+    public void setIdtributarioPe(String idtributarioPe) {
+        this.idtributarioPe = idtributarioPe;
+    }
+    public Set<Usuario> getUsuarios() {
         return this.usuarios;
     }
     
-    public void setUsuarios(Set usuarios) {
+    public void setUsuarios(Set<Usuario> usuarios) {
         this.usuarios = usuarios;
     }
 

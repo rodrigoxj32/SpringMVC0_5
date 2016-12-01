@@ -18,17 +18,16 @@ import org.springframework.orm.hibernate4.HibernateTemplate;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-
-@Service("formArancelarioService")
+@Service("formArancelarioService ")
+@Transactional
 public class FormArancelarioServiceImpl implements FormArancelarioService {
      
     
     private static List<Formularioarancelario> formularioarancelario;
 	
-    @Autowired
+
     private HibernateTemplate  hibernateTemplate;
     
-    @Autowired
     Session cn = HibernateUtil.getSessionFactory().getCurrentSession();
 
     public FormArancelarioServiceImpl() {

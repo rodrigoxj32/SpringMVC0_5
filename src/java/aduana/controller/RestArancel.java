@@ -9,6 +9,7 @@ package aduana.controller;
 import aduana.modelo.Formularioarancelario;
 import aduana.service.FormArancelarioService;
 import aduana.service.FormArancelarioServiceImpl;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -36,16 +37,23 @@ public class RestArancel {
      
     @RequestMapping(value = "/FA", method = RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<Formularioarancelario>> listAllFormularioArancelario() {
-       /* List<Formularioarancelario> formAran = formArancelarioService.findAllFormularioArancelario();
+        List<Formularioarancelario> formAran = new ArrayList();
+        try{
+        formAran = formArancelarioService.findAllFormularioArancelario();
+        }catch(Exception e) {
+            System.out.println("bloque de código donde se trata el problema");
+        }
+        
         if(formAran.isEmpty()){
             return new ResponseEntity<List<Formularioarancelario>>(HttpStatus.NO_CONTENT);//You many decide to return HttpStatus.NOT_FOUND
-        }*/
-       HttpHeaders httpHeaders = new HttpHeaders();
+        }
+        else {HttpHeaders httpHeaders = new HttpHeaders();
       httpHeaders.setLocation(
             ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
                     .buildAndExpand("120")
                     .toUri());
         return new ResponseEntity<List<Formularioarancelario>>(httpHeaders , HttpStatus.OK);
+        }
     }
  
  
@@ -96,8 +104,8 @@ public class RestArancel {
             return new ResponseEntity<Formularioarancelario>(HttpStatus.NOT_FOUND);
         }
  
-        currentArancel.setCodarancelarioFormarancelario(formAran.getCodarancelarioFormarancelario());
-        currentArancel.setProductos(formAran.getProductos());
+        currentArancel.setCodarancelarioFa(formAran.getCodarancelarioFa());
+        currentArancel.setProducto(formAran.getProducto());
         currentArancel.setUsuario(formAran.getUsuario());
          
         formArancelarioService.updateFormularioArancelario(currentArancel);

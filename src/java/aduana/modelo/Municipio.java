@@ -1,5 +1,5 @@
 package aduana.modelo;
-// Generated 11-20-2016 10:33:46 AM by Hibernate Tools 4.3.1
+// Generated 11-30-2016 03:24:13 PM by Hibernate Tools 4.3.1
 
 
 
@@ -17,12 +17,6 @@ public class Municipio  implements java.io.Serializable {
     public Municipio() {
     }
 
-	
-    public Municipio(int idMunicipio, String nombreMunicipio, String codigoMunicipio) {
-        this.idMunicipio = idMunicipio;
-        this.nombreMunicipio = nombreMunicipio;
-        this.codigoMunicipio = codigoMunicipio;
-    }
     public Municipio(int idMunicipio, Departamento departamento, String nombreMunicipio, String codigoMunicipio) {
        this.idMunicipio = idMunicipio;
        this.departamento = departamento;
