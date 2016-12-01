@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 11-30-2016 03:24:22 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="aduana.modelo.Tipousuario" table="tipousuario" schema="public" optimistic-lock="version">
+        <id name="idTu" type="int">
+            <column name="id_tu" />
+            <generator class="assigned" />
+        </id>
+        <property name="codigoTu" type="string">
+            <column name="codigo_tu" length="100" not-null="true" />
+        </property>
+        <property name="nombreTu" type="string">
+            <column name="nombre_tu" length="100" not-null="true" />
+        </property>
+        <property name="descripcionTu" type="string">
+            <column name="descripcion_tu" not-null="true" />
+        </property>
+        <set name="usuarios" table="usuario" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_tu" not-null="true" />
+            </key>
+            <one-to-many class="aduana.modelo.Usuario" />
+        </set>
+    </class>
+</hibernate-mapping>

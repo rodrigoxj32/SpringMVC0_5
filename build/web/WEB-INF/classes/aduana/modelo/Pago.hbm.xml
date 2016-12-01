@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 11-30-2016 03:24:22 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="aduana.modelo.Pago" table="pago" schema="public" optimistic-lock="version">
+        <id name="idPago" type="int">
+            <column name="id_pago" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="catalogopagos" class="aduana.modelo.Catalogopagos" fetch="select">
+            <column name="id_catpagos" not-null="true" />
+        </many-to-one>
+        <many-to-one name="pais" class="aduana.modelo.Pais" fetch="select">
+            <column name="id_pais" not-null="true" />
+        </many-to-one>
+        <many-to-one name="tipopago" class="aduana.modelo.Tipopago" fetch="select">
+            <column name="id_tipopago" not-null="true" />
+        </many-to-one>
+        <property name="codigoPago" type="string">
+            <column name="codigo_pago" length="100" not-null="true" />
+        </property>
+        <property name="precioPago" type="string">
+            <column name="precio_pago" length="100" not-null="true" />
+        </property>
+        <set name="formularioexportacions" table="formularioexportacion" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_pago" not-null="true" />
+            </key>
+            <one-to-many class="aduana.modelo.Formularioexportacion" />
+        </set>
+    </class>
+</hibernate-mapping>

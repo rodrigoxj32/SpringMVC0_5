@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 11-30-2016 03:24:22 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="aduana.modelo.Usuario" table="usuario" schema="public" optimistic-lock="version">
+        <id name="idUsuario" type="int">
+            <column name="id_usuario" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="perfilexportador" class="aduana.modelo.Perfilexportador" fetch="select">
+            <column name="id_pe" not-null="true" />
+        </many-to-one>
+        <many-to-one name="tipousuario" class="aduana.modelo.Tipousuario" fetch="select">
+            <column name="id_tu" not-null="true" />
+        </many-to-one>
+        <property name="nombreUsuario" type="string">
+            <column name="nombre_usuario" length="100" not-null="true" />
+        </property>
+        <property name="passwordUsuario" type="string">
+            <column name="password_usuario" length="20" not-null="true" />
+        </property>
+        <set name="formularioarancelarios" table="formularioarancelario" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_usuario" not-null="true" />
+            </key>
+            <one-to-many class="aduana.modelo.Formularioarancelario" />
+        </set>
+        <set name="otrosformularioses" table="otrosformularios" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_usuario" not-null="true" />
+            </key>
+            <one-to-many class="aduana.modelo.Otrosformularios" />
+        </set>
+        <set name="formularioexportacions" table="formularioexportacion" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_usuario" not-null="true" />
+            </key>
+            <one-to-many class="aduana.modelo.Formularioexportacion" />
+        </set>
+    </class>
+</hibernate-mapping>

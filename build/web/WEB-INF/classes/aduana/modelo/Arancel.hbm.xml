@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 11-30-2016 03:24:22 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="aduana.modelo.Arancel" table="arancel" schema="public" optimistic-lock="version">
+        <id name="idArancel" type="int">
+            <column name="id_arancel" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="tipoarancel" class="aduana.modelo.Tipoarancel" fetch="select">
+            <column name="id_tarancel" />
+        </many-to-one>
+        <property name="precioArancel" type="double">
+            <column name="precio_arancel" precision="17" scale="17" not-null="true" />
+        </property>
+        <set name="productos" table="producto" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_arancel" not-null="true" />
+            </key>
+            <one-to-many class="aduana.modelo.Producto" />
+        </set>
+    </class>
+</hibernate-mapping>

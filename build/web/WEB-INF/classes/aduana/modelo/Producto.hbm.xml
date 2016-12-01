@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 11-30-2016 03:24:22 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="aduana.modelo.Producto" table="producto" schema="public" optimistic-lock="version">
+        <id name="idProd" type="int">
+            <column name="id_prod" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="arancel" class="aduana.modelo.Arancel" fetch="select">
+            <column name="id_arancel" not-null="true" />
+        </many-to-one>
+        <many-to-one name="paisByIdPais" class="aduana.modelo.Pais" fetch="select">
+            <column name="id_pais" not-null="true" />
+        </many-to-one>
+        <many-to-one name="paisByPaiIdPais" class="aduana.modelo.Pais" fetch="select">
+            <column name="pai_id_pais" not-null="true" />
+        </many-to-one>
+        <many-to-one name="tipoproducto" class="aduana.modelo.Tipoproducto" fetch="select">
+            <column name="id_tipopro" not-null="true" />
+        </many-to-one>
+        <property name="nombreProd" type="string">
+            <column name="nombre_prod" length="100" not-null="true" />
+        </property>
+        <property name="pesoProd" type="double">
+            <column name="peso_prod" precision="17" scale="17" not-null="true" />
+        </property>
+        <set name="formularioarancelarios" table="formularioarancelario" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_prod" not-null="true" />
+            </key>
+            <one-to-many class="aduana.modelo.Formularioarancelario" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 11-30-2016 03:24:22 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="aduana.modelo.Formularioexportacion" table="formularioexportacion" schema="public" optimistic-lock="version">
+        <id name="idFe" type="int">
+            <column name="id_fe" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="pago" class="aduana.modelo.Pago" fetch="select">
+            <column name="id_pago" not-null="true" />
+        </many-to-one>
+        <many-to-one name="pais" class="aduana.modelo.Pais" fetch="select">
+            <column name="id_pais" not-null="true" />
+        </many-to-one>
+        <many-to-one name="transporte" class="aduana.modelo.Transporte" fetch="select">
+            <column name="id_transp" not-null="true" />
+        </many-to-one>
+        <many-to-one name="usuario" class="aduana.modelo.Usuario" fetch="select">
+            <column name="id_usuario" not-null="true" />
+        </many-to-one>
+        <property name="codigoFe" type="string">
+            <column name="codigo_fe" length="100" not-null="true" />
+        </property>
+        <property name="origenFe" type="string">
+            <column name="origen_fe" length="100" not-null="true" />
+        </property>
+        <property name="instanciasFe" type="string">
+            <column name="instancias_fe" length="100" not-null="true" />
+        </property>
+        <property name="observacionesFe" type="string">
+            <column name="observaciones_fe" length="100" not-null="true" />
+        </property>
+        <property name="fechaFe" type="date">
+            <column name="fecha_fe" length="13" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

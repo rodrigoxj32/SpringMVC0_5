@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 11-30-2016 03:24:22 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="aduana.modelo.Departamento" table="departamento" schema="public" optimistic-lock="version">
+        <id name="idDept" type="int">
+            <column name="id_dept" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="pais" class="aduana.modelo.Pais" fetch="select">
+            <column name="id_pais" not-null="true" />
+        </many-to-one>
+        <property name="codigoDept" type="string">
+            <column name="codigo_dept" length="100" not-null="true" />
+        </property>
+        <property name="nombreDept" type="string">
+            <column name="nombre_dept" length="100" not-null="true" />
+        </property>
+        <set name="municipios" table="municipio" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_dept" not-null="true" />
+            </key>
+            <one-to-many class="aduana.modelo.Municipio" />
+        </set>
+    </class>
+</hibernate-mapping>
