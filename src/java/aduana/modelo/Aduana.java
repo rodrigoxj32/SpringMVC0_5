@@ -1,5 +1,9 @@
 package aduana.modelo;
+<<<<<<< HEAD
 // Generated 11-30-2016 03:24:13 PM by Hibernate Tools 4.3.1
+=======
+// Generated 11-20-2016 10:33:46 AM by Hibernate Tools 4.3.1
+>>>>>>> ded8ed45bf60eccdd9124f32bde57f757b9c0fe3
 
 
 
@@ -17,6 +21,15 @@ public class Aduana  implements java.io.Serializable {
     public Aduana() {
     }
 
+<<<<<<< HEAD
+=======
+	
+    public Aduana(int idAduana, String nombreAduana, String codigoAduana) {
+        this.idAduana = idAduana;
+        this.nombreAduana = nombreAduana;
+        this.codigoAduana = codigoAduana;
+    }
+>>>>>>> ded8ed45bf60eccdd9124f32bde57f757b9c0fe3
     public Aduana(int idAduana, Pais pais, String nombreAduana, String codigoAduana) {
        this.idAduana = idAduana;
        this.pais = pais;

@@ -1,5 +1,9 @@
 package aduana.modelo;
+<<<<<<< HEAD
 // Generated 11-30-2016 03:24:13 PM by Hibernate Tools 4.3.1
+=======
+// Generated 11-20-2016 10:33:46 AM by Hibernate Tools 4.3.1
+>>>>>>> ded8ed45bf60eccdd9124f32bde57f757b9c0fe3
 
 
 import java.util.HashSet;
@@ -11,16 +15,25 @@ import java.util.Set;
 public class Tipoarancel  implements java.io.Serializable {
 
 
+<<<<<<< HEAD
      private int idTarancel;
      private String descripcionTarancel;
      private String clasificacionTarancel;
      private String codigoTarancel;
      private Set<Arancel> arancels = new HashSet<Arancel>(0);
+=======
+     private int idTipoarancel;
+     private String descripcionTipoarancel;
+     private String clasificacionTipoarancel;
+     private String codigoTipoarancel;
+     private Set arancels = new HashSet(0);
+>>>>>>> ded8ed45bf60eccdd9124f32bde57f757b9c0fe3
 
     public Tipoarancel() {
     }
 
 	
+<<<<<<< HEAD
     public Tipoarancel(int idTarancel, String descripcionTarancel, String clasificacionTarancel, String codigoTarancel) {
         this.idTarancel = idTarancel;
         this.descripcionTarancel = descripcionTarancel;
@@ -68,6 +81,55 @@ public class Tipoarancel  implements java.io.Serializable {
     }
     
     public void setArancels(Set<Arancel> arancels) {
+=======
+    public Tipoarancel(int idTipoarancel, String descripcionTipoarancel, String clasificacionTipoarancel, String codigoTipoarancel) {
+        this.idTipoarancel = idTipoarancel;
+        this.descripcionTipoarancel = descripcionTipoarancel;
+        this.clasificacionTipoarancel = clasificacionTipoarancel;
+        this.codigoTipoarancel = codigoTipoarancel;
+    }
+    public Tipoarancel(int idTipoarancel, String descripcionTipoarancel, String clasificacionTipoarancel, String codigoTipoarancel, Set arancels) {
+       this.idTipoarancel = idTipoarancel;
+       this.descripcionTipoarancel = descripcionTipoarancel;
+       this.clasificacionTipoarancel = clasificacionTipoarancel;
+       this.codigoTipoarancel = codigoTipoarancel;
+       this.arancels = arancels;
+    }
+   
+    public int getIdTipoarancel() {
+        return this.idTipoarancel;
+    }
+    
+    public void setIdTipoarancel(int idTipoarancel) {
+        this.idTipoarancel = idTipoarancel;
+    }
+    public String getDescripcionTipoarancel() {
+        return this.descripcionTipoarancel;
+    }
+    
+    public void setDescripcionTipoarancel(String descripcionTipoarancel) {
+        this.descripcionTipoarancel = descripcionTipoarancel;
+    }
+    public String getClasificacionTipoarancel() {
+        return this.clasificacionTipoarancel;
+    }
+    
+    public void setClasificacionTipoarancel(String clasificacionTipoarancel) {
+        this.clasificacionTipoarancel = clasificacionTipoarancel;
+    }
+    public String getCodigoTipoarancel() {
+        return this.codigoTipoarancel;
+    }
+    
+    public void setCodigoTipoarancel(String codigoTipoarancel) {
+        this.codigoTipoarancel = codigoTipoarancel;
+    }
+    public Set getArancels() {
+        return this.arancels;
+    }
+    
+    public void setArancels(Set arancels) {
+>>>>>>> ded8ed45bf60eccdd9124f32bde57f757b9c0fe3
         this.arancels = arancels;
     }
 

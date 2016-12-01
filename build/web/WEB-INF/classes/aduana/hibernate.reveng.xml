@@ -41,6 +41,7 @@ Contributor(s):
 -->
 <hibernate-reverse-engineering>
   <schema-selection match-catalog="igf" match-schema="public"/>
+<<<<<<< HEAD
   <table-filter match-name="producto"/>
   <table-filter match-name="usuario"/>
   <table-filter match-name="pago"/>
@@ -60,4 +61,29 @@ Contributor(s):
   <table-filter match-name="aduana"/>
   <table-filter match-name="arancel"/>
   <table-filter match-name="formularioarancelario"/>
+=======
+  <table-filter match-name="municipio"/>
+  <table-filter match-name="tipopago"/>
+  <table-filter match-name="tipoprod_prod"/>
+  <table-filter match-name="formularioexportacion"/>
+  <table-filter match-name="producto"/>
+  <table-filter match-name="departamento"/>
+  <table-filter match-name="pais"/>
+  <table-filter match-name="tipotransporte"/>
+  <table-filter match-name="aduana"/>
+  <table-filter match-name="formexpor_pago"/>
+  <table-filter match-name="formularioarancelario"/>
+  <table-filter match-name="otrosformularios"/>
+  <table-filter match-name="catalogopagos"/>
+  <table-filter match-name="tipoarancel"/>
+  <table-filter match-name="perfilexportador"/>
+  <table-filter match-name="tipousuario"/>
+  <table-filter match-name="arancel"/>
+  <table-filter match-name="transporte"/>
+  <table-filter match-name="formexpor_pais"/>
+  <table-filter match-name="tipoproducto"/>
+  <table-filter match-name="formarancelario_prod"/>
+  <table-filter match-name="pago"/>
+  <table-filter match-name="usuario"/>
+>>>>>>> ded8ed45bf60eccdd9124f32bde57f757b9c0fe3
 </hibernate-reverse-engineering>

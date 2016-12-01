@@ -1,5 +1,9 @@
 package aduana.modelo;
+<<<<<<< HEAD
 // Generated 11-30-2016 03:24:13 PM by Hibernate Tools 4.3.1
+=======
+// Generated 11-20-2016 10:33:46 AM by Hibernate Tools 4.3.1
+>>>>>>> ded8ed45bf60eccdd9124f32bde57f757b9c0fe3
 
 
 import java.util.HashSet;
@@ -11,16 +15,25 @@ import java.util.Set;
 public class Perfilexportador  implements java.io.Serializable {
 
 
+<<<<<<< HEAD
      private int idPe;
      private String codigoPe;
      private String domicilioPe;
      private String idtributarioPe;
      private Set<Usuario> usuarios = new HashSet<Usuario>(0);
+=======
+     private int idPerfilexpor;
+     private String codigoPerfilexpor;
+     private String domicilioPerfilexpor;
+     private String idtributarioPerfilexpor;
+     private Set usuarios = new HashSet(0);
+>>>>>>> ded8ed45bf60eccdd9124f32bde57f757b9c0fe3
 
     public Perfilexportador() {
     }
 
 	
+<<<<<<< HEAD
     public Perfilexportador(int idPe, String codigoPe, String domicilioPe, String idtributarioPe) {
         this.idPe = idPe;
         this.codigoPe = codigoPe;
@@ -68,6 +81,55 @@ public class Perfilexportador  implements java.io.Serializable {
     }
     
     public void setUsuarios(Set<Usuario> usuarios) {
+=======
+    public Perfilexportador(int idPerfilexpor, String codigoPerfilexpor, String domicilioPerfilexpor, String idtributarioPerfilexpor) {
+        this.idPerfilexpor = idPerfilexpor;
+        this.codigoPerfilexpor = codigoPerfilexpor;
+        this.domicilioPerfilexpor = domicilioPerfilexpor;
+        this.idtributarioPerfilexpor = idtributarioPerfilexpor;
+    }
+    public Perfilexportador(int idPerfilexpor, String codigoPerfilexpor, String domicilioPerfilexpor, String idtributarioPerfilexpor, Set usuarios) {
+       this.idPerfilexpor = idPerfilexpor;
+       this.codigoPerfilexpor = codigoPerfilexpor;
+       this.domicilioPerfilexpor = domicilioPerfilexpor;
+       this.idtributarioPerfilexpor = idtributarioPerfilexpor;
+       this.usuarios = usuarios;
+    }
+   
+    public int getIdPerfilexpor() {
+        return this.idPerfilexpor;
+    }
+    
+    public void setIdPerfilexpor(int idPerfilexpor) {
+        this.idPerfilexpor = idPerfilexpor;
+    }
+    public String getCodigoPerfilexpor() {
+        return this.codigoPerfilexpor;
+    }
+    
+    public void setCodigoPerfilexpor(String codigoPerfilexpor) {
+        this.codigoPerfilexpor = codigoPerfilexpor;
+    }
+    public String getDomicilioPerfilexpor() {
+        return this.domicilioPerfilexpor;
+    }
+    
+    public void setDomicilioPerfilexpor(String domicilioPerfilexpor) {
+        this.domicilioPerfilexpor = domicilioPerfilexpor;
+    }
+    public String getIdtributarioPerfilexpor() {
+        return this.idtributarioPerfilexpor;
+    }
+    
+    public void setIdtributarioPerfilexpor(String idtributarioPerfilexpor) {
+        this.idtributarioPerfilexpor = idtributarioPerfilexpor;
+    }
+    public Set getUsuarios() {
+        return this.usuarios;
+    }
+    
+    public void setUsuarios(Set usuarios) {
+>>>>>>> ded8ed45bf60eccdd9124f32bde57f757b9c0fe3
         this.usuarios = usuarios;
     }
 

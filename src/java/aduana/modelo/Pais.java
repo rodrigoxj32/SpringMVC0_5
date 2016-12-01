@@ -1,5 +1,9 @@
 package aduana.modelo;
+<<<<<<< HEAD
 // Generated 11-30-2016 03:24:13 PM by Hibernate Tools 4.3.1
+=======
+// Generated 11-20-2016 10:33:46 AM by Hibernate Tools 4.3.1
+>>>>>>> ded8ed45bf60eccdd9124f32bde57f757b9c0fe3
 
 
 import java.util.HashSet;
@@ -12,6 +16,7 @@ public class Pais  implements java.io.Serializable {
 
 
      private int idPais;
+<<<<<<< HEAD
      private int codigoAreaPais;
      private String codigoPais;
      private String nombrePais;
@@ -21,6 +26,17 @@ public class Pais  implements java.io.Serializable {
      private Set<Producto> productosForPaiIdPais = new HashSet<Producto>(0);
      private Set<Formularioexportacion> formularioexportacions = new HashSet<Formularioexportacion>(0);
      private Set<Departamento> departamentos = new HashSet<Departamento>(0);
+=======
+     private Pago pago;
+     private int codigoAreaPais;
+     private String codigoPais;
+     private String nombrePais;
+     private Set formularioexportacions = new HashSet(0);
+     private Set productosForPaiIdPais = new HashSet(0);
+     private Set productosForIdPais = new HashSet(0);
+     private Set departamentos = new HashSet(0);
+     private Set aduanas = new HashSet(0);
+>>>>>>> ded8ed45bf60eccdd9124f32bde57f757b9c0fe3
 
     public Pais() {
     }
@@ -32,6 +48,7 @@ public class Pais  implements java.io.Serializable {
         this.codigoPais = codigoPais;
         this.nombrePais = nombrePais;
     }
+<<<<<<< HEAD
     public Pais(int idPais, int codigoAreaPais, String codigoPais, String nombrePais, Set<Producto> productosForIdPais, Set<Aduana> aduanas, Set<Pago> pagos, Set<Producto> productosForPaiIdPais, Set<Formularioexportacion> formularioexportacions, Set<Departamento> departamentos) {
        this.idPais = idPais;
        this.codigoAreaPais = codigoAreaPais;
@@ -43,6 +60,19 @@ public class Pais  implements java.io.Serializable {
        this.productosForPaiIdPais = productosForPaiIdPais;
        this.formularioexportacions = formularioexportacions;
        this.departamentos = departamentos;
+=======
+    public Pais(int idPais, Pago pago, int codigoAreaPais, String codigoPais, String nombrePais, Set formularioexportacions, Set productosForPaiIdPais, Set productosForIdPais, Set departamentos, Set aduanas) {
+       this.idPais = idPais;
+       this.pago = pago;
+       this.codigoAreaPais = codigoAreaPais;
+       this.codigoPais = codigoPais;
+       this.nombrePais = nombrePais;
+       this.formularioexportacions = formularioexportacions;
+       this.productosForPaiIdPais = productosForPaiIdPais;
+       this.productosForIdPais = productosForIdPais;
+       this.departamentos = departamentos;
+       this.aduanas = aduanas;
+>>>>>>> ded8ed45bf60eccdd9124f32bde57f757b9c0fe3
     }
    
     public int getIdPais() {
@@ -52,6 +82,16 @@ public class Pais  implements java.io.Serializable {
     public void setIdPais(int idPais) {
         this.idPais = idPais;
     }
+<<<<<<< HEAD
+=======
+    public Pago getPago() {
+        return this.pago;
+    }
+    
+    public void setPago(Pago pago) {
+        this.pago = pago;
+    }
+>>>>>>> ded8ed45bf60eccdd9124f32bde57f757b9c0fe3
     public int getCodigoAreaPais() {
         return this.codigoAreaPais;
     }
@@ -73,6 +113,7 @@ public class Pais  implements java.io.Serializable {
     public void setNombrePais(String nombrePais) {
         this.nombrePais = nombrePais;
     }
+<<<<<<< HEAD
     public Set<Producto> getProductosForIdPais() {
         return this.productosForIdPais;
     }
@@ -115,6 +156,43 @@ public class Pais  implements java.io.Serializable {
     public void setDepartamentos(Set<Departamento> departamentos) {
         this.departamentos = departamentos;
     }
+=======
+    public Set getFormularioexportacions() {
+        return this.formularioexportacions;
+    }
+    
+    public void setFormularioexportacions(Set formularioexportacions) {
+        this.formularioexportacions = formularioexportacions;
+    }
+    public Set getProductosForPaiIdPais() {
+        return this.productosForPaiIdPais;
+    }
+    
+    public void setProductosForPaiIdPais(Set productosForPaiIdPais) {
+        this.productosForPaiIdPais = productosForPaiIdPais;
+    }
+    public Set getProductosForIdPais() {
+        return this.productosForIdPais;
+    }
+    
+    public void setProductosForIdPais(Set productosForIdPais) {
+        this.productosForIdPais = productosForIdPais;
+    }
+    public Set getDepartamentos() {
+        return this.departamentos;
+    }
+    
+    public void setDepartamentos(Set departamentos) {
+        this.departamentos = departamentos;
+    }
+    public Set getAduanas() {
+        return this.aduanas;
+    }
+    
+    public void setAduanas(Set aduanas) {
+        this.aduanas = aduanas;
+    }
+>>>>>>> ded8ed45bf60eccdd9124f32bde57f757b9c0fe3
 
 
 

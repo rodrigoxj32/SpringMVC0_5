@@ -1,5 +1,9 @@
 package aduana.modelo;
+<<<<<<< HEAD
 // Generated 11-30-2016 03:24:13 PM by Hibernate Tools 4.3.1
+=======
+// Generated 11-20-2016 10:33:46 AM by Hibernate Tools 4.3.1
+>>>>>>> ded8ed45bf60eccdd9124f32bde57f757b9c0fe3
 
 
 import java.util.HashSet;
@@ -11,16 +15,25 @@ import java.util.Set;
 public class Tipousuario  implements java.io.Serializable {
 
 
+<<<<<<< HEAD
      private int idTu;
      private String codigoTu;
      private String nombreTu;
      private String descripcionTu;
      private Set<Usuario> usuarios = new HashSet<Usuario>(0);
+=======
+     private int idTipousuario;
+     private String codigoTipousuario;
+     private String nombreTipousuario;
+     private String descripcioTipousuario;
+     private Set usuarios = new HashSet(0);
+>>>>>>> ded8ed45bf60eccdd9124f32bde57f757b9c0fe3
 
     public Tipousuario() {
     }
 
 	
+<<<<<<< HEAD
     public Tipousuario(int idTu, String codigoTu, String nombreTu, String descripcionTu) {
         this.idTu = idTu;
         this.codigoTu = codigoTu;
@@ -68,6 +81,55 @@ public class Tipousuario  implements java.io.Serializable {
     }
     
     public void setUsuarios(Set<Usuario> usuarios) {
+=======
+    public Tipousuario(int idTipousuario, String codigoTipousuario, String nombreTipousuario, String descripcioTipousuario) {
+        this.idTipousuario = idTipousuario;
+        this.codigoTipousuario = codigoTipousuario;
+        this.nombreTipousuario = nombreTipousuario;
+        this.descripcioTipousuario = descripcioTipousuario;
+    }
+    public Tipousuario(int idTipousuario, String codigoTipousuario, String nombreTipousuario, String descripcioTipousuario, Set usuarios) {
+       this.idTipousuario = idTipousuario;
+       this.codigoTipousuario = codigoTipousuario;
+       this.nombreTipousuario = nombreTipousuario;
+       this.descripcioTipousuario = descripcioTipousuario;
+       this.usuarios = usuarios;
+    }
+   
+    public int getIdTipousuario() {
+        return this.idTipousuario;
+    }
+    
+    public void setIdTipousuario(int idTipousuario) {
+        this.idTipousuario = idTipousuario;
+    }
+    public String getCodigoTipousuario() {
+        return this.codigoTipousuario;
+    }
+    
+    public void setCodigoTipousuario(String codigoTipousuario) {
+        this.codigoTipousuario = codigoTipousuario;
+    }
+    public String getNombreTipousuario() {
+        return this.nombreTipousuario;
+    }
+    
+    public void setNombreTipousuario(String nombreTipousuario) {
+        this.nombreTipousuario = nombreTipousuario;
+    }
+    public String getDescripcioTipousuario() {
+        return this.descripcioTipousuario;
+    }
+    
+    public void setDescripcioTipousuario(String descripcioTipousuario) {
+        this.descripcioTipousuario = descripcioTipousuario;
+    }
+    public Set getUsuarios() {
+        return this.usuarios;
+    }
+    
+    public void setUsuarios(Set usuarios) {
+>>>>>>> ded8ed45bf60eccdd9124f32bde57f757b9c0fe3
         this.usuarios = usuarios;
     }
 

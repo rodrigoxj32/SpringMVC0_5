@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
@@ -18,4 +19,30 @@
             <column name="codarancelario_fa" length="100" not-null="true" />
         </property>
     </class>
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 11-20-2016 10:33:47 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+  <class name="aduana.modelo.Formularioarancelario" optimistic-lock="version" schema="public" table="formularioarancelario">
+    <id name="idFormarancelario" type="int">
+      <column name="id_formarancelario"/>
+      <generator class="assigned"/>
+    </id>
+    <many-to-one class="aduana.modelo.Usuario" fetch="select" name="usuario">
+      <column name="id_usuario"/>
+    </many-to-one>
+    <property name="codarancelarioFormarancelario" type="string">
+      <column length="100" name="codarancelario_formarancelario" not-null="true"/>
+    </property>
+    <set fetch="select" inverse="true" lazy="true" name="productos" table="formarancelario_prod">
+      <key>
+        <column name="id_formarancelario" not-null="true"/>
+      </key>
+      <many-to-many entity-name="modelo.Producto">
+        <column name="id_prod" not-null="true"/>
+      </many-to-many>
+    </set>
+  </class>
+>>>>>>> ded8ed45bf60eccdd9124f32bde57f757b9c0fe3
 </hibernate-mapping>

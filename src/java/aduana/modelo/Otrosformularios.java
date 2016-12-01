@@ -1,5 +1,9 @@
 package aduana.modelo;
+<<<<<<< HEAD
 // Generated 11-30-2016 03:24:13 PM by Hibernate Tools 4.3.1
+=======
+// Generated 11-20-2016 10:33:46 AM by Hibernate Tools 4.3.1
+>>>>>>> ded8ed45bf60eccdd9124f32bde57f757b9c0fe3
 
 
 
@@ -15,6 +19,13 @@ public class Otrosformularios  implements java.io.Serializable {
     public Otrosformularios() {
     }
 
+<<<<<<< HEAD
+=======
+	
+    public Otrosformularios(int idOtrosform) {
+        this.idOtrosform = idOtrosform;
+    }
+>>>>>>> ded8ed45bf60eccdd9124f32bde57f757b9c0fe3
     public Otrosformularios(int idOtrosform, Usuario usuario) {
        this.idOtrosform = idOtrosform;
        this.usuario = usuario;

@@ -1,5 +1,9 @@
 package aduana.modelo;
+<<<<<<< HEAD
 // Generated 11-30-2016 03:24:13 PM by Hibernate Tools 4.3.1
+=======
+// Generated 11-20-2016 10:33:46 AM by Hibernate Tools 4.3.1
+>>>>>>> ded8ed45bf60eccdd9124f32bde57f757b9c0fe3
 
 
 import java.util.HashSet;
@@ -16,14 +20,21 @@ public class Usuario  implements java.io.Serializable {
      private Tipousuario tipousuario;
      private String nombreUsuario;
      private String passwordUsuario;
+<<<<<<< HEAD
      private Set<Formularioarancelario> formularioarancelarios = new HashSet<Formularioarancelario>(0);
      private Set<Otrosformularios> otrosformularioses = new HashSet<Otrosformularios>(0);
      private Set<Formularioexportacion> formularioexportacions = new HashSet<Formularioexportacion>(0);
+=======
+     private Set formularioarancelarios = new HashSet(0);
+     private Set otrosformularioses = new HashSet(0);
+     private Set formularioexportacions = new HashSet(0);
+>>>>>>> ded8ed45bf60eccdd9124f32bde57f757b9c0fe3
 
     public Usuario() {
     }
 
 	
+<<<<<<< HEAD
     public Usuario(int idUsuario, Perfilexportador perfilexportador, Tipousuario tipousuario, String nombreUsuario, String passwordUsuario) {
         this.idUsuario = idUsuario;
         this.perfilexportador = perfilexportador;
@@ -32,6 +43,14 @@ public class Usuario  implements java.io.Serializable {
         this.passwordUsuario = passwordUsuario;
     }
     public Usuario(int idUsuario, Perfilexportador perfilexportador, Tipousuario tipousuario, String nombreUsuario, String passwordUsuario, Set<Formularioarancelario> formularioarancelarios, Set<Otrosformularios> otrosformularioses, Set<Formularioexportacion> formularioexportacions) {
+=======
+    public Usuario(int idUsuario, String nombreUsuario, String passwordUsuario) {
+        this.idUsuario = idUsuario;
+        this.nombreUsuario = nombreUsuario;
+        this.passwordUsuario = passwordUsuario;
+    }
+    public Usuario(int idUsuario, Perfilexportador perfilexportador, Tipousuario tipousuario, String nombreUsuario, String passwordUsuario, Set formularioarancelarios, Set otrosformularioses, Set formularioexportacions) {
+>>>>>>> ded8ed45bf60eccdd9124f32bde57f757b9c0fe3
        this.idUsuario = idUsuario;
        this.perfilexportador = perfilexportador;
        this.tipousuario = tipousuario;
@@ -77,6 +96,7 @@ public class Usuario  implements java.io.Serializable {
     public void setPasswordUsuario(String passwordUsuario) {
         this.passwordUsuario = passwordUsuario;
     }
+<<<<<<< HEAD
     public Set<Formularioarancelario> getFormularioarancelarios() {
         return this.formularioarancelarios;
     }
@@ -96,6 +116,27 @@ public class Usuario  implements java.io.Serializable {
     }
     
     public void setFormularioexportacions(Set<Formularioexportacion> formularioexportacions) {
+=======
+    public Set getFormularioarancelarios() {
+        return this.formularioarancelarios;
+    }
+    
+    public void setFormularioarancelarios(Set formularioarancelarios) {
+        this.formularioarancelarios = formularioarancelarios;
+    }
+    public Set getOtrosformularioses() {
+        return this.otrosformularioses;
+    }
+    
+    public void setOtrosformularioses(Set otrosformularioses) {
+        this.otrosformularioses = otrosformularioses;
+    }
+    public Set getFormularioexportacions() {
+        return this.formularioexportacions;
+    }
+    
+    public void setFormularioexportacions(Set formularioexportacions) {
+>>>>>>> ded8ed45bf60eccdd9124f32bde57f757b9c0fe3
         this.formularioexportacions = formularioexportacions;
     }
 

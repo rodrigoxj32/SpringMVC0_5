@@ -1,5 +1,9 @@
 package aduana.modelo;
+<<<<<<< HEAD
 // Generated 11-30-2016 03:24:13 PM by Hibernate Tools 4.3.1
+=======
+// Generated 11-20-2016 10:33:46 AM by Hibernate Tools 4.3.1
+>>>>>>> ded8ed45bf60eccdd9124f32bde57f757b9c0fe3
 
 
 import java.util.HashSet;
@@ -15,12 +19,17 @@ public class Transporte  implements java.io.Serializable {
      private Tipotransporte tipotransporte;
      private String nombreTransp;
      private String descripcionTransp;
+<<<<<<< HEAD
      private Set<Formularioexportacion> formularioexportacions = new HashSet<Formularioexportacion>(0);
+=======
+     private Set formularioexportacions = new HashSet(0);
+>>>>>>> ded8ed45bf60eccdd9124f32bde57f757b9c0fe3
 
     public Transporte() {
     }
 
 	
+<<<<<<< HEAD
     public Transporte(int idTransp, Tipotransporte tipotransporte, String nombreTransp, String descripcionTransp) {
         this.idTransp = idTransp;
         this.tipotransporte = tipotransporte;
@@ -28,6 +37,14 @@ public class Transporte  implements java.io.Serializable {
         this.descripcionTransp = descripcionTransp;
     }
     public Transporte(int idTransp, Tipotransporte tipotransporte, String nombreTransp, String descripcionTransp, Set<Formularioexportacion> formularioexportacions) {
+=======
+    public Transporte(int idTransp, String nombreTransp, String descripcionTransp) {
+        this.idTransp = idTransp;
+        this.nombreTransp = nombreTransp;
+        this.descripcionTransp = descripcionTransp;
+    }
+    public Transporte(int idTransp, Tipotransporte tipotransporte, String nombreTransp, String descripcionTransp, Set formularioexportacions) {
+>>>>>>> ded8ed45bf60eccdd9124f32bde57f757b9c0fe3
        this.idTransp = idTransp;
        this.tipotransporte = tipotransporte;
        this.nombreTransp = nombreTransp;
@@ -63,11 +80,19 @@ public class Transporte  implements java.io.Serializable {
     public void setDescripcionTransp(String descripcionTransp) {
         this.descripcionTransp = descripcionTransp;
     }
+<<<<<<< HEAD
     public Set<Formularioexportacion> getFormularioexportacions() {
         return this.formularioexportacions;
     }
     
     public void setFormularioexportacions(Set<Formularioexportacion> formularioexportacions) {
+=======
+    public Set getFormularioexportacions() {
+        return this.formularioexportacions;
+    }
+    
+    public void setFormularioexportacions(Set formularioexportacions) {
+>>>>>>> ded8ed45bf60eccdd9124f32bde57f757b9c0fe3
         this.formularioexportacions = formularioexportacions;
     }
 

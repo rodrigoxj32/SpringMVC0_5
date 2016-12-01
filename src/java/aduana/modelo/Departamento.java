@@ -1,5 +1,9 @@
 package aduana.modelo;
+<<<<<<< HEAD
 // Generated 11-30-2016 03:24:13 PM by Hibernate Tools 4.3.1
+=======
+// Generated 11-20-2016 10:33:46 AM by Hibernate Tools 4.3.1
+>>>>>>> ded8ed45bf60eccdd9124f32bde57f757b9c0fe3
 
 
 import java.util.HashSet;
@@ -15,12 +19,17 @@ public class Departamento  implements java.io.Serializable {
      private Pais pais;
      private String codigoDept;
      private String nombreDept;
+<<<<<<< HEAD
      private Set<Municipio> municipios = new HashSet<Municipio>(0);
+=======
+     private Set municipios = new HashSet(0);
+>>>>>>> ded8ed45bf60eccdd9124f32bde57f757b9c0fe3
 
     public Departamento() {
     }
 
 	
+<<<<<<< HEAD
     public Departamento(int idDept, Pais pais, String codigoDept, String nombreDept) {
         this.idDept = idDept;
         this.pais = pais;
@@ -28,6 +37,14 @@ public class Departamento  implements java.io.Serializable {
         this.nombreDept = nombreDept;
     }
     public Departamento(int idDept, Pais pais, String codigoDept, String nombreDept, Set<Municipio> municipios) {
+=======
+    public Departamento(int idDept, String codigoDept, String nombreDept) {
+        this.idDept = idDept;
+        this.codigoDept = codigoDept;
+        this.nombreDept = nombreDept;
+    }
+    public Departamento(int idDept, Pais pais, String codigoDept, String nombreDept, Set municipios) {
+>>>>>>> ded8ed45bf60eccdd9124f32bde57f757b9c0fe3
        this.idDept = idDept;
        this.pais = pais;
        this.codigoDept = codigoDept;
@@ -63,11 +80,19 @@ public class Departamento  implements java.io.Serializable {
     public void setNombreDept(String nombreDept) {
         this.nombreDept = nombreDept;
     }
+<<<<<<< HEAD
     public Set<Municipio> getMunicipios() {
         return this.municipios;
     }
     
     public void setMunicipios(Set<Municipio> municipios) {
+=======
+    public Set getMunicipios() {
+        return this.municipios;
+    }
+    
+    public void setMunicipios(Set municipios) {
+>>>>>>> ded8ed45bf60eccdd9124f32bde57f757b9c0fe3
         this.municipios = municipios;
     }
 

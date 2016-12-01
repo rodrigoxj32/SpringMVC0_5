@@ -73,13 +73,21 @@ public class RestExportacion {
      
     @RequestMapping(value = "/FE/", method = RequestMethod.POST)
     public ResponseEntity<Void> createUser(@RequestBody Formularioexportacion formAran,    UriComponentsBuilder ucBuilder) {
+<<<<<<< HEAD
         System.out.println("Creando formulario exportacion " + formAran.getIdFe());
+=======
+        System.out.println("Creando formulario exportacion " + formAran.getIdFormexpor());
+>>>>>>> ded8ed45bf60eccdd9124f32bde57f757b9c0fe3
  
          
         servicioExportacion.saveFormularioExportacion(formAran);
  
         HttpHeaders headers = new HttpHeaders();
+<<<<<<< HEAD
         headers.setLocation(ucBuilder.path("/FE/{id}").buildAndExpand(formAran.getIdFe()).toUri());
+=======
+        headers.setLocation(ucBuilder.path("/FE/{id}").buildAndExpand(formAran.getIdFormexpor()).toUri());
+>>>>>>> ded8ed45bf60eccdd9124f32bde57f757b9c0fe3
         return new ResponseEntity<Void>(headers, HttpStatus.CREATED);
     }
  
@@ -98,12 +106,21 @@ public class RestExportacion {
             return new ResponseEntity<Formularioexportacion>(HttpStatus.NOT_FOUND);
         }
  
+<<<<<<< HEAD
         currentExportacion.setCodigoFe(formExport.getCodigoFe());
         currentExportacion.setFechaFe(formExport.getFechaFe());
         currentExportacion.setInstanciasFe(formExport.getInstanciasFe());
         currentExportacion.setObservacionesFe(formExport.getObservacionesFe());
         currentExportacion.setOrigenFe(formExport.getOrigenFe());
         currentExportacion.setPais(formExport.getPais());
+=======
+        currentExportacion.setCodigoFormexpor(formExport.getCodigoFormexpor());
+        currentExportacion.setFechaFormexpor(formExport.getFechaFormexpor());
+        currentExportacion.setInstanciasFormexpor(formExport.getInstanciasFormexpor());
+        currentExportacion.setObservacionesFormexpor(formExport.getObservacionesFormexpor());
+        currentExportacion.setOrigenFormexpor(formExport.getOrigenFormexpor());
+        currentExportacion.setPaises(formExport.getPaises());
+>>>>>>> ded8ed45bf60eccdd9124f32bde57f757b9c0fe3
         currentExportacion.setTransporte(formExport.getTransporte());
         currentExportacion.setUsuario(formExport.getUsuario());
          

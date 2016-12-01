@@ -18,16 +18,28 @@ import org.springframework.orm.hibernate4.HibernateTemplate;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+<<<<<<< HEAD
 @Service("formArancelarioService ")
 @Transactional
+=======
+
+@Service("formArancelarioService")
+>>>>>>> ded8ed45bf60eccdd9124f32bde57f757b9c0fe3
 public class FormArancelarioServiceImpl implements FormArancelarioService {
      
     
     private static List<Formularioarancelario> formularioarancelario;
 	
+<<<<<<< HEAD
 
     private HibernateTemplate  hibernateTemplate;
     
+=======
+    @Autowired
+    private HibernateTemplate  hibernateTemplate;
+    
+    @Autowired
+>>>>>>> ded8ed45bf60eccdd9124f32bde57f757b9c0fe3
     Session cn = HibernateUtil.getSessionFactory().getCurrentSession();
 
     public FormArancelarioServiceImpl() {
@@ -96,7 +108,11 @@ public class FormArancelarioServiceImpl implements FormArancelarioService {
     }
 
     @Override
+<<<<<<< HEAD
     public void deleteFormularioArancelarioById(int fa) {
+=======
+    public void deleteFormularioArancelarioById(Formularioarancelario fa) {
+>>>>>>> ded8ed45bf60eccdd9124f32bde57f757b9c0fe3
         
         Transaction t = getSession().getTransaction();
         try {

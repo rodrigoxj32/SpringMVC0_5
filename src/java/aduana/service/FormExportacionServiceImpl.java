@@ -113,7 +113,11 @@ public class FormExportacionServiceImpl implements FormExportacionService {
     public List<Formularioexportacion> findAllFormExportacion() {
                 //String hql = "FROM Person as p ORDER BY p.pid";
 	System.out.println("algo paso findAllFormularioArancelario");
+<<<<<<< HEAD
         String hql = "FROM Formularioexportacion";
+=======
+        String hql = "FROM formularioarancelario";
+>>>>>>> ded8ed45bf60eccdd9124f32bde57f757b9c0fe3
         try {
             //lista = getSession().createCriteria(Cajero.class).list();
             formularioexportacion= getSession().createQuery(hql).list();
