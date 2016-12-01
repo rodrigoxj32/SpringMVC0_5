@@ -1,15 +1,9 @@
 'use strict';
 
 
-<<<<<<< HEAD
 var app=angular.module('formularioAra',[]);
   
 app.controller('arancelario',['$scope','FormArancelarioService',function($scope,FormArancelarioService) {
-=======
-var app=angular.module("formularioAra",[]);
-  
-app.controller("arancelario",["$scope","FormArancelarioService",function($scope,FormArancelarioService) {
->>>>>>> ded8ed45bf60eccdd9124f32bde57f757b9c0fe3
   var self = this;
     self.Farancel={idFormarancelario:'',usuario:'',CodarancelarioFormarancelario:''};
     self.Farancels=[];
@@ -35,10 +29,7 @@ app.controller("arancelario",["$scope","FormArancelarioService",function($scope,
     }
 
     function saveFormularioArancelario(Farancel){
-<<<<<<< HEAD
         console.log('entro al metodo donde esta el metodo java', FormArancelarioService);
-=======
->>>>>>> ded8ed45bf60eccdd9124f32bde57f757b9c0fe3
         FormArancelarioService.saveFormularioArancelario(Farancel)
             .then(findAllFormularioArancelario,
             function(errResponse){
@@ -46,10 +37,7 @@ app.controller("arancelario",["$scope","FormArancelarioService",function($scope,
             }
         );
     }
-<<<<<<< HEAD
     
-=======
->>>>>>> ded8ed45bf60eccdd9124f32bde57f757b9c0fe3
 
     function updateUser(Farancel, id){
         FormArancelarioService.updateUser(Farancel, id)

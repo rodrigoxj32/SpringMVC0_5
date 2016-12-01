@@ -1,9 +1,5 @@
 package aduana.modelo;
-<<<<<<< HEAD
 // Generated 11-30-2016 03:24:13 PM by Hibernate Tools 4.3.1
-=======
-// Generated 11-20-2016 10:33:46 AM by Hibernate Tools 4.3.1
->>>>>>> ded8ed45bf60eccdd9124f32bde57f757b9c0fe3
 
 
 import java.util.HashSet;
@@ -17,27 +13,17 @@ public class Producto  implements java.io.Serializable {
 
      private int idProd;
      private Arancel arancel;
-<<<<<<< HEAD
      private Pais paisByIdPais;
      private Pais paisByPaiIdPais;
      private Tipoproducto tipoproducto;
      private String nombreProd;
      private double pesoProd;
      private Set<Formularioarancelario> formularioarancelarios = new HashSet<Formularioarancelario>(0);
-=======
-     private Pais paisByPaiIdPais;
-     private Pais paisByIdPais;
-     private String nombreProd;
-     private double pesoProd;
-     private Set tipoproductos = new HashSet(0);
-     private Set formularioarancelarios = new HashSet(0);
->>>>>>> ded8ed45bf60eccdd9124f32bde57f757b9c0fe3
 
     public Producto() {
     }
 
 	
-<<<<<<< HEAD
     public Producto(int idProd, Arancel arancel, Pais paisByIdPais, Pais paisByPaiIdPais, Tipoproducto tipoproducto, String nombreProd, double pesoProd) {
         this.idProd = idProd;
         this.arancel = arancel;
@@ -55,21 +41,6 @@ public class Producto  implements java.io.Serializable {
        this.tipoproducto = tipoproducto;
        this.nombreProd = nombreProd;
        this.pesoProd = pesoProd;
-=======
-    public Producto(int idProd, String nombreProd, double pesoProd) {
-        this.idProd = idProd;
-        this.nombreProd = nombreProd;
-        this.pesoProd = pesoProd;
-    }
-    public Producto(int idProd, Arancel arancel, Pais paisByPaiIdPais, Pais paisByIdPais, String nombreProd, double pesoProd, Set tipoproductos, Set formularioarancelarios) {
-       this.idProd = idProd;
-       this.arancel = arancel;
-       this.paisByPaiIdPais = paisByPaiIdPais;
-       this.paisByIdPais = paisByIdPais;
-       this.nombreProd = nombreProd;
-       this.pesoProd = pesoProd;
-       this.tipoproductos = tipoproductos;
->>>>>>> ded8ed45bf60eccdd9124f32bde57f757b9c0fe3
        this.formularioarancelarios = formularioarancelarios;
     }
    
@@ -87,7 +58,6 @@ public class Producto  implements java.io.Serializable {
     public void setArancel(Arancel arancel) {
         this.arancel = arancel;
     }
-<<<<<<< HEAD
     public Pais getPaisByIdPais() {
         return this.paisByIdPais;
     }
@@ -95,8 +65,6 @@ public class Producto  implements java.io.Serializable {
     public void setPaisByIdPais(Pais paisByIdPais) {
         this.paisByIdPais = paisByIdPais;
     }
-=======
->>>>>>> ded8ed45bf60eccdd9124f32bde57f757b9c0fe3
     public Pais getPaisByPaiIdPais() {
         return this.paisByPaiIdPais;
     }
@@ -104,21 +72,12 @@ public class Producto  implements java.io.Serializable {
     public void setPaisByPaiIdPais(Pais paisByPaiIdPais) {
         this.paisByPaiIdPais = paisByPaiIdPais;
     }
-<<<<<<< HEAD
     public Tipoproducto getTipoproducto() {
         return this.tipoproducto;
     }
     
     public void setTipoproducto(Tipoproducto tipoproducto) {
         this.tipoproducto = tipoproducto;
-=======
-    public Pais getPaisByIdPais() {
-        return this.paisByIdPais;
-    }
-    
-    public void setPaisByIdPais(Pais paisByIdPais) {
-        this.paisByIdPais = paisByIdPais;
->>>>>>> ded8ed45bf60eccdd9124f32bde57f757b9c0fe3
     }
     public String getNombreProd() {
         return this.nombreProd;
@@ -134,26 +93,11 @@ public class Producto  implements java.io.Serializable {
     public void setPesoProd(double pesoProd) {
         this.pesoProd = pesoProd;
     }
-<<<<<<< HEAD
     public Set<Formularioarancelario> getFormularioarancelarios() {
         return this.formularioarancelarios;
     }
     
     public void setFormularioarancelarios(Set<Formularioarancelario> formularioarancelarios) {
-=======
-    public Set getTipoproductos() {
-        return this.tipoproductos;
-    }
-    
-    public void setTipoproductos(Set tipoproductos) {
-        this.tipoproductos = tipoproductos;
-    }
-    public Set getFormularioarancelarios() {
-        return this.formularioarancelarios;
-    }
-    
-    public void setFormularioarancelarios(Set formularioarancelarios) {
->>>>>>> ded8ed45bf60eccdd9124f32bde57f757b9c0fe3
         this.formularioarancelarios = formularioarancelarios;
     }
 

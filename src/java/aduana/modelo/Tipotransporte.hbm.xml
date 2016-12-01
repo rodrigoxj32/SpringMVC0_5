@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
@@ -22,28 +21,4 @@
             <one-to-many class="aduana.modelo.Transporte" />
         </set>
     </class>
-=======
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 11-20-2016 10:33:47 AM by Hibernate Tools 4.3.1 -->
-<hibernate-mapping>
-  <class name="aduana.modelo.Tipotransporte" optimistic-lock="version" schema="public" table="tipotransporte">
-    <id name="idTipotrans" type="int">
-      <column name="id_tipotrans"/>
-      <generator class="assigned"/>
-    </id>
-    <property name="clasificacionTipotrans" type="string">
-      <column length="100" name="clasificacion_tipotrans" not-null="true"/>
-    </property>
-    <property name="pesoTipotrans" type="double">
-      <column name="peso_tipotrans" not-null="true" precision="17" scale="17"/>
-    </property>
-    <set fetch="select" inverse="true" lazy="true" name="transportes" table="transporte">
-      <key>
-        <column name="id_tipotrans"/>
-      </key>
-      <one-to-many class="aduana.modelo.Transporte"/>
-    </set>
-  </class>
->>>>>>> ded8ed45bf60eccdd9124f32bde57f757b9c0fe3
 </hibernate-mapping>

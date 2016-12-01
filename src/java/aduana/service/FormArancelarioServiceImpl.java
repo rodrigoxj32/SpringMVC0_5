@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
  
 import aduana.modelo.Formularioarancelario;
 import aduana.HibernateUtil;
+import aduana.modelo.Formularioexportacion;
 
 import java.util.List;
 import org.hibernate.Session;
@@ -18,28 +19,16 @@ import org.springframework.orm.hibernate4.HibernateTemplate;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-<<<<<<< HEAD
 @Service("formArancelarioService ")
 @Transactional
-=======
-
-@Service("formArancelarioService")
->>>>>>> ded8ed45bf60eccdd9124f32bde57f757b9c0fe3
 public class FormArancelarioServiceImpl implements FormArancelarioService {
      
     
     private static List<Formularioarancelario> formularioarancelario;
 	
-<<<<<<< HEAD
 
     private HibernateTemplate  hibernateTemplate;
     
-=======
-    @Autowired
-    private HibernateTemplate  hibernateTemplate;
-    
-    @Autowired
->>>>>>> ded8ed45bf60eccdd9124f32bde57f757b9c0fe3
     Session cn = HibernateUtil.getSessionFactory().getCurrentSession();
 
     public FormArancelarioServiceImpl() {
@@ -108,11 +97,7 @@ public class FormArancelarioServiceImpl implements FormArancelarioService {
     }
 
     @Override
-<<<<<<< HEAD
     public void deleteFormularioArancelarioById(int fa) {
-=======
-    public void deleteFormularioArancelarioById(Formularioarancelario fa) {
->>>>>>> ded8ed45bf60eccdd9124f32bde57f757b9c0fe3
         
         Transaction t = getSession().getTransaction();
         try {
@@ -129,20 +114,21 @@ public class FormArancelarioServiceImpl implements FormArancelarioService {
 
    
     @Override
-    public List<Formularioarancelario> findAllFormularioArancelario() {        
-        //String hql = "FROM Person as p ORDER BY p.pid";
-	System.out.println("algo paso findAllFormularioArancelario");
-        String hql = "FROM formularioarancelario";
+    public List<Formularioarancelario> findAllFormularioArancelario() {
+	      System.out.println("algo paso findAllFormularioArancelario");
+        List<Formularioarancelario> formularioarancelario = null;
+        Transaction t = getSession().getTransaction(); 
+        String hql = "from Formularioarancelario f";
         try {
-            //lista = getSession().createCriteria(Cajero.class).list();
+            t.begin();
             formularioarancelario = getSession().createQuery(hql).list();
-            //lista = getSession().createSQLQuery("select * from cajero").list();
+            t.commit();
         } catch (Exception e) {
+            t.rollback();
         } finally {
             desconectar();
         }
         return formularioarancelario;
-     
     }
 
     @Override

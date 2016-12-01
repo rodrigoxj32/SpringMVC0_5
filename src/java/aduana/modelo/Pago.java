@@ -1,9 +1,5 @@
 package aduana.modelo;
-<<<<<<< HEAD
 // Generated 11-30-2016 03:24:13 PM by Hibernate Tools 4.3.1
-=======
-// Generated 11-20-2016 10:33:46 AM by Hibernate Tools 4.3.1
->>>>>>> ded8ed45bf60eccdd9124f32bde57f757b9c0fe3
 
 
 import java.util.HashSet;
@@ -17,25 +13,16 @@ public class Pago  implements java.io.Serializable {
 
      private int idPago;
      private Catalogopagos catalogopagos;
-<<<<<<< HEAD
      private Pais pais;
      private Tipopago tipopago;
      private String codigoPago;
      private String precioPago;
      private Set<Formularioexportacion> formularioexportacions = new HashSet<Formularioexportacion>(0);
-=======
-     private Tipopago tipopago;
-     private String codigoPago;
-     private String precioPago;
-     private Set formularioexportacions = new HashSet(0);
-     private Set paises = new HashSet(0);
->>>>>>> ded8ed45bf60eccdd9124f32bde57f757b9c0fe3
 
     public Pago() {
     }
 
 	
-<<<<<<< HEAD
     public Pago(int idPago, Catalogopagos catalogopagos, Pais pais, Tipopago tipopago, String codigoPago, String precioPago) {
         this.idPago = idPago;
         this.catalogopagos = catalogopagos;
@@ -48,24 +35,10 @@ public class Pago  implements java.io.Serializable {
        this.idPago = idPago;
        this.catalogopagos = catalogopagos;
        this.pais = pais;
-=======
-    public Pago(int idPago, String codigoPago, String precioPago) {
-        this.idPago = idPago;
-        this.codigoPago = codigoPago;
-        this.precioPago = precioPago;
-    }
-    public Pago(int idPago, Catalogopagos catalogopagos, Tipopago tipopago, String codigoPago, String precioPago, Set formularioexportacions, Set paises) {
-       this.idPago = idPago;
-       this.catalogopagos = catalogopagos;
->>>>>>> ded8ed45bf60eccdd9124f32bde57f757b9c0fe3
        this.tipopago = tipopago;
        this.codigoPago = codigoPago;
        this.precioPago = precioPago;
        this.formularioexportacions = formularioexportacions;
-<<<<<<< HEAD
-=======
-       this.paises = paises;
->>>>>>> ded8ed45bf60eccdd9124f32bde57f757b9c0fe3
     }
    
     public int getIdPago() {
@@ -82,7 +55,6 @@ public class Pago  implements java.io.Serializable {
     public void setCatalogopagos(Catalogopagos catalogopagos) {
         this.catalogopagos = catalogopagos;
     }
-<<<<<<< HEAD
     public Pais getPais() {
         return this.pais;
     }
@@ -90,8 +62,6 @@ public class Pago  implements java.io.Serializable {
     public void setPais(Pais pais) {
         this.pais = pais;
     }
-=======
->>>>>>> ded8ed45bf60eccdd9124f32bde57f757b9c0fe3
     public Tipopago getTipopago() {
         return this.tipopago;
     }
@@ -113,7 +83,6 @@ public class Pago  implements java.io.Serializable {
     public void setPrecioPago(String precioPago) {
         this.precioPago = precioPago;
     }
-<<<<<<< HEAD
     public Set<Formularioexportacion> getFormularioexportacions() {
         return this.formularioexportacions;
     }
@@ -121,22 +90,6 @@ public class Pago  implements java.io.Serializable {
     public void setFormularioexportacions(Set<Formularioexportacion> formularioexportacions) {
         this.formularioexportacions = formularioexportacions;
     }
-=======
-    public Set getFormularioexportacions() {
-        return this.formularioexportacions;
-    }
-    
-    public void setFormularioexportacions(Set formularioexportacions) {
-        this.formularioexportacions = formularioexportacions;
-    }
-    public Set getPaises() {
-        return this.paises;
-    }
-    
-    public void setPaises(Set paises) {
-        this.paises = paises;
-    }
->>>>>>> ded8ed45bf60eccdd9124f32bde57f757b9c0fe3
 
 
 

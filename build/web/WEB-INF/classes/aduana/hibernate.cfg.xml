@@ -46,7 +46,6 @@ Contributor(s):
     <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/igf</property>
     <property name="hibernate.connection.username">igf</property>
     <property name="hibernate.connection.password">1234</property>
-<<<<<<< HEAD
     <mapping resource="aduana/modelo/Arancel.hbm.xml"/>
     <mapping resource="aduana/modelo/Otrosformularios.hbm.xml"/>
     <mapping resource="aduana/modelo/Tipopago.hbm.xml"/>
@@ -66,26 +65,5 @@ Contributor(s):
     <mapping resource="aduana/modelo/Municipio.hbm.xml"/>
     <mapping resource="aduana/modelo/Usuario.hbm.xml"/>
     <mapping resource="aduana/modelo/Tipoproducto.hbm.xml"/>
-=======
-    <mapping resource="aduana/modelo/Pais.hbm.xml"/>
-    <mapping resource="aduana/modelo/Formularioarancelario.hbm.xml"/>
-    <mapping resource="aduana/modelo/Tipotransporte.hbm.xml"/>
-    <mapping resource="aduana/modelo/Perfilexportador.hbm.xml"/>
-    <mapping resource="aduana/modelo/Catalogopagos.hbm.xml"/>
-    <mapping resource="aduana/modelo/Otrosformularios.hbm.xml"/>
-    <mapping resource="aduana/modelo/Tipopago.hbm.xml"/>
-    <mapping resource="aduana/modelo/Tipoproducto.hbm.xml"/>
-    <mapping resource="aduana/modelo/Municipio.hbm.xml"/>
-    <mapping resource="aduana/modelo/Usuario.hbm.xml"/>
-    <mapping resource="aduana/modelo/Pago.hbm.xml"/>
-    <mapping resource="aduana/modelo/Aduana.hbm.xml"/>
-    <mapping resource="aduana/modelo/Tipoarancel.hbm.xml"/>
-    <mapping resource="aduana/modelo/Departamento.hbm.xml"/>
-    <mapping resource="aduana/modelo/Producto.hbm.xml"/>
-    <mapping resource="aduana/modelo/Formularioexportacion.hbm.xml"/>
-    <mapping resource="aduana/modelo/Arancel.hbm.xml"/>
-    <mapping resource="aduana/modelo/Tipousuario.hbm.xml"/>
-    <mapping resource="aduana/modelo/Transporte.hbm.xml"/>
->>>>>>> ded8ed45bf60eccdd9124f32bde57f757b9c0fe3
   </session-factory>
 </hibernate-configuration>

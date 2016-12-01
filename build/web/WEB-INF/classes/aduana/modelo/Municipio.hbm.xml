@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
@@ -19,25 +18,4 @@
             <column name="codigo_municipio" length="100" not-null="true" />
         </property>
     </class>
-=======
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 11-20-2016 10:33:47 AM by Hibernate Tools 4.3.1 -->
-<hibernate-mapping>
-  <class name="aduana.modelo.Municipio" optimistic-lock="version" schema="public" table="municipio">
-    <id name="idMunicipio" type="int">
-      <column name="id_municipio"/>
-      <generator class="assigned"/>
-    </id>
-    <many-to-one class="aduana.modelo.Departamento" fetch="select" name="departamento">
-      <column name="id_dept"/>
-    </many-to-one>
-    <property name="nombreMunicipio" type="string">
-      <column length="100" name="nombre_municipio" not-null="true"/>
-    </property>
-    <property name="codigoMunicipio" type="string">
-      <column length="100" name="codigo_municipio" not-null="true"/>
-    </property>
-  </class>
->>>>>>> ded8ed45bf60eccdd9124f32bde57f757b9c0fe3
 </hibernate-mapping>

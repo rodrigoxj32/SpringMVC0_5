@@ -1,9 +1,5 @@
 package aduana.modelo;
-<<<<<<< HEAD
 // Generated 11-30-2016 03:24:13 PM by Hibernate Tools 4.3.1
-=======
-// Generated 11-20-2016 10:33:46 AM by Hibernate Tools 4.3.1
->>>>>>> ded8ed45bf60eccdd9124f32bde57f757b9c0fe3
 
 
 import java.util.HashSet;
@@ -17,31 +13,18 @@ public class Arancel  implements java.io.Serializable {
 
      private int idArancel;
      private Tipoarancel tipoarancel;
-<<<<<<< HEAD
      private double precioArancel;
      private Set<Producto> productos = new HashSet<Producto>(0);
-=======
-     private String precioArancel;
-     private Set productos = new HashSet(0);
->>>>>>> ded8ed45bf60eccdd9124f32bde57f757b9c0fe3
 
     public Arancel() {
     }
 
 	
-<<<<<<< HEAD
     public Arancel(int idArancel, double precioArancel) {
         this.idArancel = idArancel;
         this.precioArancel = precioArancel;
     }
     public Arancel(int idArancel, Tipoarancel tipoarancel, double precioArancel, Set<Producto> productos) {
-=======
-    public Arancel(int idArancel, String precioArancel) {
-        this.idArancel = idArancel;
-        this.precioArancel = precioArancel;
-    }
-    public Arancel(int idArancel, Tipoarancel tipoarancel, String precioArancel, Set productos) {
->>>>>>> ded8ed45bf60eccdd9124f32bde57f757b9c0fe3
        this.idArancel = idArancel;
        this.tipoarancel = tipoarancel;
        this.precioArancel = precioArancel;
@@ -62,7 +45,6 @@ public class Arancel  implements java.io.Serializable {
     public void setTipoarancel(Tipoarancel tipoarancel) {
         this.tipoarancel = tipoarancel;
     }
-<<<<<<< HEAD
     public double getPrecioArancel() {
         return this.precioArancel;
     }
@@ -75,20 +57,6 @@ public class Arancel  implements java.io.Serializable {
     }
     
     public void setProductos(Set<Producto> productos) {
-=======
-    public String getPrecioArancel() {
-        return this.precioArancel;
-    }
-    
-    public void setPrecioArancel(String precioArancel) {
-        this.precioArancel = precioArancel;
-    }
-    public Set getProductos() {
-        return this.productos;
-    }
-    
-    public void setProductos(Set productos) {
->>>>>>> ded8ed45bf60eccdd9124f32bde57f757b9c0fe3
         this.productos = productos;
     }
 

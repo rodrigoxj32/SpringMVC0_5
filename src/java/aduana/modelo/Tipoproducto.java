@@ -1,9 +1,5 @@
 package aduana.modelo;
-<<<<<<< HEAD
 // Generated 11-30-2016 03:24:13 PM by Hibernate Tools 4.3.1
-=======
-// Generated 11-20-2016 10:33:46 AM by Hibernate Tools 4.3.1
->>>>>>> ded8ed45bf60eccdd9124f32bde57f757b9c0fe3
 
 
 import java.util.HashSet;
@@ -19,11 +15,7 @@ public class Tipoproducto  implements java.io.Serializable {
      private String descripcionTipopro;
      private String clasificacionTipopro;
      private String codigoTipopro;
-<<<<<<< HEAD
      private Set<Producto> productos = new HashSet<Producto>(0);
-=======
-     private Set productos = new HashSet(0);
->>>>>>> ded8ed45bf60eccdd9124f32bde57f757b9c0fe3
 
     public Tipoproducto() {
     }
@@ -35,11 +27,7 @@ public class Tipoproducto  implements java.io.Serializable {
         this.clasificacionTipopro = clasificacionTipopro;
         this.codigoTipopro = codigoTipopro;
     }
-<<<<<<< HEAD
     public Tipoproducto(int idTipopro, String descripcionTipopro, String clasificacionTipopro, String codigoTipopro, Set<Producto> productos) {
-=======
-    public Tipoproducto(int idTipopro, String descripcionTipopro, String clasificacionTipopro, String codigoTipopro, Set productos) {
->>>>>>> ded8ed45bf60eccdd9124f32bde57f757b9c0fe3
        this.idTipopro = idTipopro;
        this.descripcionTipopro = descripcionTipopro;
        this.clasificacionTipopro = clasificacionTipopro;
@@ -75,19 +63,11 @@ public class Tipoproducto  implements java.io.Serializable {
     public void setCodigoTipopro(String codigoTipopro) {
         this.codigoTipopro = codigoTipopro;
     }
-<<<<<<< HEAD
     public Set<Producto> getProductos() {
         return this.productos;
     }
     
     public void setProductos(Set<Producto> productos) {
-=======
-    public Set getProductos() {
-        return this.productos;
-    }
-    
-    public void setProductos(Set productos) {
->>>>>>> ded8ed45bf60eccdd9124f32bde57f757b9c0fe3
         this.productos = productos;
     }
 

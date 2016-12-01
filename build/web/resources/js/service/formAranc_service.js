@@ -1,17 +1,10 @@
 'use strict';
 
 
-<<<<<<< HEAD
 var app=angular.module('formularioAra');
   
 
 app.factory('FormArancelarioService',['$http', '$q',function($http, $q) {
-=======
-var app=angular.module("formularioAra");
-  
-
-app.factory("FormArancelarioService",['$http', '$q',function($http, $q) {
->>>>>>> ded8ed45bf60eccdd9124f32bde57f757b9c0fe3
   var REST_SERVICE_URI = 'http://localhost:8080/proyecto2/FA/';
   
       var factory = {
@@ -37,30 +30,18 @@ app.factory("FormArancelarioService",['$http', '$q',function($http, $q) {
         );
         return deferred.promise;
     }
-<<<<<<< HEAD
     
     function saveFormularioArancelario(Farancel) {
        console.error('save de los servicios angular',Farancel);
         var deferred = $q.defer();
         $http.post(REST_SERVICE_URI, Farancel,{'Content-Type' : 'application/json'})
-=======
-
-   function saveFormularioArancelario(Farancel) {
-       alert('save de los servicios angular')
-        var deferred = $q.defer();
-        $http.post(REST_SERVICE_URI, Farancel)
->>>>>>> ded8ed45bf60eccdd9124f32bde57f757b9c0fe3
             .then(
             function (response) {
                 deferred.resolve(response.data);
             },
             function(errResponse){
-<<<<<<< HEAD
                 console.error(errResponse);
                 console.error('Error Mientras Se creaba el Fomulario Arancelario  en el Save');
-=======
-                console.error('Error Mientras Se creaba el fomulario Arancelario');
->>>>>>> ded8ed45bf60eccdd9124f32bde57f757b9c0fe3
                 deferred.reject(errResponse);
             }
         );

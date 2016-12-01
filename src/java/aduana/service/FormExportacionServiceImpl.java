@@ -111,19 +111,16 @@ public class FormExportacionServiceImpl implements FormExportacionService {
 
     @Override
     public List<Formularioexportacion> findAllFormExportacion() {
-                //String hql = "FROM Person as p ORDER BY p.pid";
-	System.out.println("algo paso findAllFormularioArancelario");
-<<<<<<< HEAD
-        String hql = "FROM Formularioexportacion";
-=======
-        String hql = "FROM formularioarancelario";
->>>>>>> ded8ed45bf60eccdd9124f32bde57f757b9c0fe3
+	      System.out.println("algo paso findAllFormularioArancelario");
+        List<Formularioexportacion> formularioexportacion = null;
+        Transaction t = getSession().getTransaction(); 
+        String hql = "from Formularioexportacion f";
         try {
-            //lista = getSession().createCriteria(Cajero.class).list();
-            formularioexportacion= getSession().createQuery(hql).list();
-            //lista = getSession().createSQLQuery("select * from cajero").list();
+            t.begin();
+            formularioexportacion = getSession().createQuery(hql).list();
+            t.commit();
         } catch (Exception e) {
-            
+            t.rollback();
         } finally {
             desconectar();
         }
