@@ -1,11 +1,11 @@
 'use strict';
 
 
-var app=angular.module("formularioAra",[]);
+var app=angular.module('formularioAra',[]);
   
-app.controller("arancelario",["$scope","FormArancelarioService",function($scope,FormArancelarioService) {
+app.controller('arancelario',['$scope','FormArancelarioService',function($scope,FormArancelarioService) {
   var self = this;
-    self.Farancel={idFormarancelario:'',usuario:'',CodarancelarioFormarancelario:''};
+    self.Farancel={idFa:'',usuario:'',codarancelarioFa:''};
     self.Farancels=[];
 
     self.submit = submit;
@@ -29,6 +29,7 @@ app.controller("arancelario",["$scope","FormArancelarioService",function($scope,
     }
 
     function saveFormularioArancelario(Farancel){
+        console.log('entro al metodo donde esta el metodo java', FormArancelarioService);
         FormArancelarioService.saveFormularioArancelario(Farancel)
             .then(findAllFormularioArancelario,
             function(errResponse){
@@ -36,34 +37,35 @@ app.controller("arancelario",["$scope","FormArancelarioService",function($scope,
             }
         );
     }
+    
 
-    function updateUser(Farancel, id){
-        FormArancelarioService.updateUser(Farancel, id)
+    function updateFormularioArancelario(Farancel, id){
+        FormArancelarioService.updateFormularioArancelario(Farancel, id)
             .then(
             findAllFormularioArancelario,
             function(errResponse){
-                console.error('Error while updating User');
+                console.error('Error mientras se actualizaba Formulario Arancelario');
             }
         );
     }
 
-    function deleteUser(id){
-        FormArancelarioService.deleteUser(id)
+    function deleteFormularioArancelarioById(id){
+        FormArancelarioService.deleteFormularioArancelarioById(id)
             .then(
             findAllFormularioArancelario,
             function(errResponse){
-                console.error('Error while deleting User');
+                console.error('Error mientras se borraba Formulario Arancelario');
             }
         );
     }
 
     function submit() {
-        if(self.Farancel.idFormarancelario!==null){
+        if(self.Farancel.idFa!==null){
             console.log('Guardando El nuevo Formulario Arancelario', self.Farancel);
             saveFormularioArancelario(self.Farancel);
         }else{
-            updateUser(self.Farancel, self.Farancel.idFormarancelario);
-            console.log('Formulario Arancelario actualizado con id ', self.Farancel.idFormarancelario);
+            updateFormularioArancelario(self.Farancel, self.Farancel.idFa);
+            console.log('Formulario Arancelario Actualizado con id ', self.Farancel.idFa);
         }
         reset();
     }
@@ -80,15 +82,15 @@ app.controller("arancelario",["$scope","FormArancelarioService",function($scope,
 
     function remove(id){
         console.log('id to be deleted', id);
-        if(self.Farancel.idFormarancelario === id) {//clean form if the Farancel to be deleted is shown there.
+        if(self.Farancel.idFa === id) {//clean form if the Farancel to be deleted is shown there.
             reset();
         }
-        deleteUser(id);
+        deleteFormularioArancelarioById(id);
     }
 
 
     function reset(){
-        self.Farancel={idFormarancelario:'',usuario:'',CodarancelarioFormarancelario:''};
+        self.Farancel={idFa:'',usuario:'',codarancelarioFa:''};
         $scope.FormArancelario.$setPristine(); //reset Form
     }
     

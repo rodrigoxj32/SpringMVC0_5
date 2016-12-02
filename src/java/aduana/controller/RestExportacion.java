@@ -26,30 +26,41 @@ import org.springframework.stereotype.Controller;
 import aduana.modelo.Formularioexportacion;
 import aduana.HibernateUtil;
 import aduana.modelo.Formularioarancelario;
+import java.util.ArrayList;
 
 import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 @RestController
 public class RestExportacion {
-        @Autowired( required = false)
+    @Autowired( required = false)
     FormExportacionService servicioExportacion;
         
 
     //-------------------Retrieve All FormularioArancelario--------------------------------------------------------
      
-    @RequestMapping(value = "/FE/", method = RequestMethod.GET)
-    public ResponseEntity<List<Formularioexportacion>> listAllUsers() {
+    @RequestMapping(value = "/FE", method = RequestMethod.GET)
+    public ResponseEntity<List<Formularioexportacion>> findAllFormularioExportacion() {
         System.out.println("metodo de busqueda exportacion");
+        List<Formularioexportacion> formAran = new ArrayList();
+                
+        try{
+        formAran = servicioExportacion.findAllFormExportacion();
+        }catch(Exception e) {
+            System.out.println("bloque de código donde se trata el problema error: " +e);
+        }
         
-        
-        List<Formularioexportacion> formAran = servicioExportacion.findAllFormExportacion();
-               
         if(formAran.isEmpty()){
             return new ResponseEntity<List<Formularioexportacion>>(HttpStatus.NO_CONTENT);//You many decide to return HttpStatus.NOT_FOUND
         }
-        return new ResponseEntity<List<Formularioexportacion>>(formAran, HttpStatus.OK);
+        else {HttpHeaders httpHeaders = new HttpHeaders();
+      httpHeaders.setLocation(
+            ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand("120")
+                    .toUri());
+        return new ResponseEntity<List<Formularioexportacion>>(httpHeaders , HttpStatus.OK);
+        }
     }
  
  
@@ -57,7 +68,7 @@ public class RestExportacion {
     //-------------------Retrieve Single FormularioArancelario--------------------------------------------------------
      
     @RequestMapping(value = "/FE/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Formularioexportacion> getUser(@PathVariable("id") int id) {
+    public ResponseEntity<Formularioexportacion> getFormularioexportacion(@PathVariable("id") int id) {
         System.out.println("Buscando el formulario exportacion" + id);
         Formularioexportacion formAran = servicioExportacion.findById(id);
         if (formAran == null) {
@@ -71,8 +82,8 @@ public class RestExportacion {
      
     //-------------------Create a FormularioArancelario--------------------------------------------------------
      
-    @RequestMapping(value = "/FE/", method = RequestMethod.POST)
-    public ResponseEntity<Void> createUser(@RequestBody Formularioexportacion formAran,    UriComponentsBuilder ucBuilder) {
+    @RequestMapping(value = "/FE", method = RequestMethod.POST)
+    public ResponseEntity<Void> saveFormularioExportacion(@RequestBody Formularioexportacion formAran,    UriComponentsBuilder ucBuilder) {
         System.out.println("Creando formulario exportacion " + formAran.getIdFe());
  
          
@@ -88,7 +99,7 @@ public class RestExportacion {
     //------------------- Update a FormularioArancelario--------------------------------------------------------
      
     @RequestMapping(value = "/FE/{id}", method = RequestMethod.PUT)
-    public ResponseEntity<Formularioexportacion> updateUser(@PathVariable("id") int id, @RequestBody Formularioexportacion formExport) {
+    public ResponseEntity<Formularioexportacion> updateExportacion(@PathVariable("id") int id, @RequestBody Formularioexportacion formExport) {
         System.out.println("Actualizando formulario exportacion " + id);
          
         Formularioexportacion currentExportacion = servicioExportacion.findById(id);
@@ -116,7 +127,7 @@ public class RestExportacion {
     //------------------- Delete a FormularioArancelario --------------------------------------------------------
      
     @RequestMapping(value = "/FE/{id}", method = RequestMethod.DELETE)
-    public ResponseEntity<Formularioexportacion> deleteUser(@PathVariable("id") int id) {
+    public ResponseEntity<Formularioexportacion> deleteExportacion(@PathVariable("id") int id) {
         System.out.println("eliminar formulario exportacion " + id);
  
         Formularioexportacion user = servicioExportacion.findById(id);
@@ -135,10 +146,10 @@ public class RestExportacion {
     //------------------- Delete All FormularioArancelario --------------------------------------------------------
      
     @RequestMapping(value = "/FE/", method = RequestMethod.DELETE)
-    public ResponseEntity<Formularioexportacion> deleteAllUsers() {
+    public ResponseEntity<Formularioexportacion> deleteAllFormularioexportacions() {
         System.out.println("Deleting formularios exportacion ");
         
-        servicioExportacion.deleteAllFormularioexportacion();
+        servicioExportacion.deleteAllFormularioExportacion();
         return new ResponseEntity<Formularioexportacion>(HttpStatus.NO_CONTENT);
     }
     

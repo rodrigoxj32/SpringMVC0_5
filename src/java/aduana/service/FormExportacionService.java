@@ -20,7 +20,7 @@ public interface FormExportacionService {
 
 	List<Formularioexportacion> findAllFormExportacion(); 
 	
-	void deleteAllFormularioexportacion();
+	void deleteAllFormularioExportacion();
 	
 
 	

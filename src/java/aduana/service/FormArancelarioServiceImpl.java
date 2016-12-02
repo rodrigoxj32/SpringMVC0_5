@@ -15,14 +15,15 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.hibernate4.HibernateTemplate;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-@Service("formArancelarioService ")
-@Transactional
+@Service
+@Component("formArancelarioService")
 public class FormArancelarioServiceImpl implements FormArancelarioService {
      
-    
+    @Autowired
     private static List<Formularioarancelario> formularioarancelario;
 	
 

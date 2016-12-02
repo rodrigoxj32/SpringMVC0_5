@@ -4,13 +4,13 @@ var app=angular.module("formularioExpor");
   
 
 app.factory("FormExportacionService",['$http', '$q',function($http, $q) {
-  var REST_SERVICE_URI = 'http://localhost:8080/proyecto2/FE/';
+  var REST_SERVICE_URI = 'http://localhost:8080/SpringMVC0_5/FE';
   
       var factory = {
         findAllFormularioExportacion: findAllFormularioExportacion,
         saveFormularioExportacion: saveFormularioExportacion,
-        updateExportacion:updateExportacion,
-        deleteExportacion:deleteExportacion
+        updateFormularioExportacion:updateFormularioExportacion,
+        deleteFormularioExportacionById:deleteFormularioExportacionById
     };
 
     return factory;
@@ -30,10 +30,9 @@ app.factory("FormExportacionService",['$http', '$q',function($http, $q) {
         return deferred.promise;
     }
 
-   function saveFormularioExportacion(Farancel) {
-       alert('save de los servicios angular')
+   function saveFormularioExportacion(Fexport) {
         var deferred = $q.defer();
-        $http.post(REST_SERVICE_URI, Farancel)
+        $http.post(REST_SERVICE_URI, Fexport)
             .then(
             function (response) {
                 deferred.resolve(response.data);
@@ -47,9 +46,9 @@ app.factory("FormExportacionService",['$http', '$q',function($http, $q) {
     }
 
 
-    function updateExportacion(Farancel, id) {
+    function updateFormularioExportacion(Fexport, id) {
         var deferred = $q.defer();
-        $http.put(REST_SERVICE_URI+id, Farancel)
+        $http.put(REST_SERVICE_URI+id, Fexport)
             .then(
             function (response) {
                 deferred.resolve(response.data);
@@ -62,7 +61,7 @@ app.factory("FormExportacionService",['$http', '$q',function($http, $q) {
         return deferred.promise;
     }
 
-    function deleteExportacion(id) {
+    function deleteFormularioExportacionById(id) {
         var deferred = $q.defer();
         $http.delete(REST_SERVICE_URI+id)
             .then(

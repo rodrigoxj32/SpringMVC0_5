@@ -127,7 +127,7 @@ public class FormExportacionServiceImpl implements FormExportacionService {
     }
 
     @Override
-    public void deleteAllFormularioexportacion() {
+    public void deleteAllFormularioExportacion() {
         
     }
     

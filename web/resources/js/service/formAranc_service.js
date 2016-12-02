@@ -5,13 +5,13 @@ var app=angular.module('formularioAra');
   
 
 app.factory('FormArancelarioService',['$http', '$q',function($http, $q) {
-  var REST_SERVICE_URI = 'http://localhost:8080/SpringMVC0_5/FA/';
+  var REST_SERVICE_URI = 'http://localhost:8080/SpringMVC0_5/FA';
   
       var factory = {
         findAllFormularioArancelario: findAllFormularioArancelario,
         saveFormularioArancelario: saveFormularioArancelario,
-        updateUser:updateUser,
-        deleteUser:deleteUser
+        updateFormularioArancelario:updateFormularioArancelario,
+        deleteFormularioArancelarioById:deleteFormularioArancelarioById
     };
 
     return factory;
@@ -49,7 +49,7 @@ app.factory('FormArancelarioService',['$http', '$q',function($http, $q) {
     }
 
 
-    function updateUser(Farancel, id) {
+    function updateFormularioArancelario(Farancel, id) {
         var deferred = $q.defer();
         $http.put(REST_SERVICE_URI+id, Farancel)
             .then(
@@ -57,14 +57,14 @@ app.factory('FormArancelarioService',['$http', '$q',function($http, $q) {
                 deferred.resolve(response.data);
             },
             function(errResponse){
-                console.error('Error while updating User');
+                console.error('Error mientras se actualizaba el Formulario Arancelario');
                 deferred.reject(errResponse);
             }
         );
         return deferred.promise;
     }
 
-    function deleteUser(id) {
+    function deleteFormularioArancelarioById(id) {
         var deferred = $q.defer();
         $http.delete(REST_SERVICE_URI+id)
             .then(
@@ -72,7 +72,7 @@ app.factory('FormArancelarioService',['$http', '$q',function($http, $q) {
                 deferred.resolve(response.data);
             },
             function(errResponse){
-                console.error('Error while deleting User');
+                console.error('Error mientras se borraba el Formulario Arancelario');
                 deferred.reject(errResponse);
             }
         );

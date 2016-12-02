@@ -41,13 +41,13 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="http://localhost:8080/SpringMVC0_5-bautista/index">Inicio</a>
+                        <a href="http://localhost:8080/SpringMVC0_5/index">Inicio</a>
                     </li>
                     <li>
-                        <a href="http://localhost:8080/SpringMVC0_5-bautista">Formularios Exportacion</a>
+                        <a href="http://localhost:8080/SpringMVC0_5">Formularios Exportacion</a>
                     </li>
                     <li>
-                        <a href="http://localhost:8080/SpringMVC0_5-bautista/formularioArancelario">Formularios Arancelarios</a>
+                        <a href="http://localhost:8080/SpringMVC0_5/formularioArancelario">Formularios Arancelarios</a>
                     </li>
                 </ul>
             </div>

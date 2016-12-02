@@ -20,7 +20,7 @@ FE.controller("exportacion",["$scope","FormExportacionService",function($scope,F
         FormExportacionService.findAllFormularioExportacion()
             .then(
             function(d) {
-                self.Farancels = d;
+                self.Fexports = d;
             },
             function(errResponse){
                 console.error('Error mientras se obtienen los formularios de exportacion');

@@ -35,19 +35,19 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="http://localhost:8080/proyecto2/index">SIECA</a>
+                <a class="navbar-brand" href="http://localhost:8080/SpringMVC0_5/index">SIECA</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="http://localhost:8080/proyecto2/index">Inicio</a>
+                        <a href="http://localhost:8080/SpringMVC0_5/index">Inicio</a>
                     </li>
                     <li>
-                        <a href="http://localhost:8080/proyecto2">Formularios Exportacion</a>
+                        <a href="http://localhost:8080/SpringMVC0_5">Formularios Exportacion</a>
                     </li>
                     <li>
-                        <a href="http://localhost:8080/proyecto2/formularioArancelario">Formularios Arancelarios</a>
+                        <a href="http://localhost:8080/SpringMVC0_5/formularioArancelario">Formularios Arancelarios</a>
                     </li>
                 </ul>
             </div>
@@ -141,7 +141,7 @@
                             <form ng-submit="ctrl.submit()" name="FormArancelario">  
                             <div class="form-group">
                                 <label for="idFormarancelario">Id Form:</label>
-                                <input type="text" name="idFormarancelario" required class="form-control" placeholder="ID Formulario" id="idFormarancelario" ng-model="ctrl.Farancel.idFormarancelario">
+                                <input type="text" name="idFa" required class="form-control" placeholder="ID Formulario" id="idFa" ng-model="ctrl.Farancel.idFa">
                             </div>
                             <div class="form-group">
                                 <label>Usuario:</label>
@@ -155,7 +155,7 @@
                             
                             <div class="form-group">
                                 <label>Cod Arancelario:</label>
-                                <input  type="text" name="codarancelarioFormarancelario" id="codarancelarioFormarancelario" required class="form-control"  ng-model="ctrl.Farancel.CodarancelarioFormarancelario"  value="" placeholder="Cod Arancelario" >
+                                <input  type="text" name="codarancelarioFa" id="codarancelarioFa" required class="form-control"  ng-model="ctrl.Farancel.codarancelarioFa"  value="" placeholder="Cod Arancelario" >
                             </div>
                             <div class="form-group">
                                 <button class="btn btn-primary" type="submit" id="guardar"><i class="fa fa-floppy-o"></i> Guardar</button>

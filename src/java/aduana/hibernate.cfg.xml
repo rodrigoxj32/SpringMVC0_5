@@ -46,6 +46,7 @@ Contributor(s):
     <property name="hibernate.connection.url">jdbc:postgresql://localhost:5433/igf</property>
     <property name="hibernate.connection.username">igf</property>
     <property name="hibernate.connection.password">1234</property>
+    <property name="hibernate.current_session_context_class">thread</property>
     <mapping resource="aduana/modelo/Arancel.hbm.xml"/>
     <mapping resource="aduana/modelo/Otrosformularios.hbm.xml"/>
     <mapping resource="aduana/modelo/Tipopago.hbm.xml"/>

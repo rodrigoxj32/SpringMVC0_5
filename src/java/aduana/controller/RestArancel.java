@@ -14,6 +14,7 @@ import java.util.List;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -27,21 +28,24 @@ import org.springframework.web.util.UriComponentsBuilder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-@RestController
+@Controller
 public class RestArancel {
     
+    
+    @Autowired(required = false)
+    @Qualifier(value="formArancelarioService")
     FormArancelarioService formArancelarioService ;  //Service which will do all data retrieval/manipulation work
  
     
         //-------------------Retrieve All FormularioArancelario--------------------------------------------------------
      
-    @RequestMapping(value = "/FA", method = RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/FA", method = RequestMethod.GET)
     public ResponseEntity<List<Formularioarancelario>> listAllFormularioArancelario() {
         List<Formularioarancelario> formAran = new ArrayList();
         try{
         formAran = formArancelarioService.findAllFormularioArancelario();
         }catch(Exception e) {
-            System.out.println("bloque de código donde se trata el problema");
+            System.out.println("bloque de código donde se trata el problema error: " +e);
         }
         
         if(formAran.isEmpty()){
@@ -75,7 +79,7 @@ public class RestArancel {
      
     //-------------------Create a FormularioArancelario--------------------------------------------------------
      
-   @RequestMapping(value = "/FA", method = RequestMethod.POST,produces = MediaType.APPLICATION_JSON_VALUE)
+   @RequestMapping(value = "/FA", method = RequestMethod.POST)
     public ResponseEntity<Void> saveFormularioArancelario(@RequestBody Formularioarancelario formArancelario,    UriComponentsBuilder ucBuilder) {
 
         System.out.println("entro al metodo de guardado");
